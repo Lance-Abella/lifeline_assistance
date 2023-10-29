@@ -1,6 +1,5 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_web_libraries_in_flutter
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_web_libraries_in_flutter, use_build_context_synchronously
 
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/login_page.dart';
 
@@ -15,7 +14,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState(){
     super.initState();
-    goToLoginPage();
+    goToLoginPage(context);
   }
 
   @override
@@ -37,7 +36,7 @@ class _SplashState extends State<Splash> {
   }
 }
 
-Future<void> goToLoginPage() async {
+Future<void> goToLoginPage(BuildContext context) async {
   await Future.delayed(Duration(milliseconds: 1500), (){});
-  Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (context)=>LoginPage()));
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
 }
