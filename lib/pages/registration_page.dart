@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/registration_page2.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -359,7 +360,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
             ),
 
-            Container(
+              Container(
                 margin: EdgeInsets.only(left: 40, top: 780),
                 child: Text(
                   "Password:",
@@ -373,50 +374,50 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
 
               Container(
-              height: 41,
-              width: 280,
-              margin: EdgeInsets.only(left: 40, top: 810),
-              child: TextField(
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                obscureText: _obscureText,
-                decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureText ? Icons.visibility : Icons.visibility_off,
-                    ),
-                    color: Colors.black,
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                  filled: true,
-                  fillColor: Color.fromRGBO(226, 225, 225, 1),
-                ),
-              ),
-            ),
-
-            Container(
-                margin: EdgeInsets.only(left: 40, top: 870),
-                child: Text(
-                  "Address:",
+                height: 41,
+                width: 280,
+                margin: EdgeInsets.only(left: 40, top: 810),
+                child: TextField(
                   style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                  ),
+                  obscureText: _obscureText,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                      ),
+                      color: Colors.black,
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    filled: true,
+                    fillColor: Color.fromRGBO(226, 225, 225, 1),
                   ),
                 ),
               ),
+
+              Container(
+                  margin: EdgeInsets.only(left: 40, top: 870),
+                  child: Text(
+                    "Address:",
+                    style: TextStyle(
+                      color: Color.fromRGBO(88, 83, 83, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
 
               Container(
                 height: 41,
@@ -425,7 +426,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ),                  
+                  ), 
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -486,60 +487,58 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
               ),
 
-                Container(
-                  margin: EdgeInsets.only(left: 190, top: 990),
-                  height: 41,
-                  width: 120,
-                  alignment: Alignment.centerRight,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.0),
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromRGBO(217, 217, 217, 1),
-                  ),
-                  child:Container(
-                    padding: EdgeInsets.zero,
-                    child: DropdownButton<String>(
-                      alignment:AlignmentDirectional.topCenter,
-                      value: selectedBloodType,                    
-                      dropdownColor: Colors.white,
-                      icon: Icon(Icons.arrow_drop_down, color: Colors.black,),
-                      iconSize: 24,
-                      elevation: 0,
-                      itemHeight: 48,
-                      
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          selectedBloodType = newValue;
-                        });
-                      },
-                      items: <String>[
-                        'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', 'Other'
-                      ].map((String value) {
-                        return DropdownMenuItem<String>(
-                          alignment:AlignmentDirectional.centerEnd,
-                          value: value,
-                          child: Text(
-                            value,
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
+              Container(
+                margin: EdgeInsets.only(left: 190, top: 990),
+                height: 41,
+                width: 120,
+                alignment: Alignment.centerRight,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1.0),
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color.fromRGBO(217, 217, 217, 1),
+                ),
+                child:Container(
+                  padding: EdgeInsets.zero,
+                  child: DropdownButton<String>(
+                    alignment:AlignmentDirectional.topCenter,
+                    value: selectedBloodType,                    
+                    dropdownColor: Colors.white,
+                    icon: Icon(Icons.arrow_drop_down, color: Colors.black,),
+                    iconSize: 24,
+                    elevation: 0,
+                    itemHeight: 48,
+                    
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedBloodType = newValue;
+                      });
+                    },
+                    items: <String>[
+                      'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', 'Other'
+                    ].map((String value) {
+                      return DropdownMenuItem<String>(
+                        alignment:AlignmentDirectional.centerEnd,
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(
+                            color: Colors.black,
                           ),
-                        );
-                      }).toList(),
-                      underline: Container( 
-                      height: 0,
-                    ),
-                    ),
+                        ),
+                      );
+                    }).toList(),
+                    underline: Container( 
+                    height: 0,
+                  ),
                   ),
                 ),
-
+              ),
 
               Container(
                 margin: EdgeInsets.only(left: 50, top: 1050),
                 width: 117,
                 height: 38,
-                child: ElevatedButton(
-                  
+                child: ElevatedButton(                  
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage()));
                   },
@@ -564,10 +563,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 margin: EdgeInsets.only(left: 190, top: 1050),
                 width: 117,
                 height: 38,
-                child: ElevatedButton(
-                  
+                child: ElevatedButton(                  
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage2()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromRGBO(191, 27, 27, 1), 
@@ -584,7 +582,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                   ),
                 ),
-              ),                                                        
+              ),
             ],
           ),
         ),
