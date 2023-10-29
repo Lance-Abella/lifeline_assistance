@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
+import "package:lifeline_assistance/pages/registration_page.dart";
 
 class LoginPage extends StatefulWidget {
   @override
@@ -28,21 +29,21 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 105, top: 60),
+              margin: EdgeInsets.only(left: 22, top: 180),
               child: Image(
                 image: AssetImage("assets/logind2.png"),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 127, top: 240),
+              margin: EdgeInsets.only(left: 140, top: 220),
               child: Text(
                 "LOG IN",
                 style: TextStyle(
                   color: Color.fromRGBO(88, 83, 83, 1),
                   fontFamily: "IBM Plex Mono",
                   fontSize: 24,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ),
@@ -178,15 +179,18 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
 
-            Container(
-              margin: EdgeInsets.only(left: 115, top: 625),
-              child: Text(
-                "Create an account",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage())),
+              child: Container(
+                margin: EdgeInsets.only(left: 115, top: 625),
+                child: Text(
+                  "Create an account",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
               ),
             ),
