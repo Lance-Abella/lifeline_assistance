@@ -24,8 +24,8 @@ class _SplashState extends State<Splash> {
       body: Center(
         child: 
         Container(          
-          height: 219,
-          width: 298,
+          height: 190,
+          width: 260,
           child: Image(
             image: AssetImage("assets/splash logo.png"),
             fit: BoxFit.cover,

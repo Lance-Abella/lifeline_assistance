@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/registered_volunteers_page.dart';
 import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
 import 'package:video_player/video_player.dart';
@@ -292,28 +293,34 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
 
-              Container(
-              height: 41,
-              width: 41,
-              margin: EdgeInsets.only(left: 81, top: 687),
-              child: Image(
-                image: AssetImage("assets/chatbtn.png"),
-                fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+                child: Container(
+                height: 41,
+                width: 41,
+                margin: EdgeInsets.only(left: 81, top: 687),
+                child: Image(
+                  image: AssetImage("assets/chatbtn.png"),
+                  fit: BoxFit.cover,
+                ),
+                          ),
               ),
-            ),
 
-            Container(
-                margin: EdgeInsets.only(left: 84, top: 730),
-                child: Text(
-                  "bulletin",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 84, top: 730),
+                  child: Text(
+                    "bulletin",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
             Container(
               height: 80,
