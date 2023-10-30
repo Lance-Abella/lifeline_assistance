@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
+import "package:lifeline_assistance/pages/home_page.dart";
 import "package:lifeline_assistance/pages/registration_page.dart";
 
 class LoginPage extends StatefulWidget {
@@ -145,22 +146,25 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
 
-            Container(
-              margin: EdgeInsets.only(left: 115, top: 525),
-              width: 117,
-              height: 38,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(191, 27, 27, 1),
-                borderRadius: BorderRadius.circular(10), 
-              ),
-              child: Center(
-                child: Text(
-                  "login",
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                margin: EdgeInsets.only(left: 115, top: 525),
+                width: 117,
+                height: 38,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(191, 27, 27, 1),
+                  borderRadius: BorderRadius.circular(10), 
+                ),
+                child: Center(
+                  child: Text(
+                    "login",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),

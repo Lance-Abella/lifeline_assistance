@@ -40,7 +40,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
 
               Container(
                 width: 180,
-                margin: EdgeInsets.only(top: 1050),
+                margin: EdgeInsets.only(top: 860),
                 child: Image(
                   image: AssetImage("assets/logind3.png"),
                 ),
