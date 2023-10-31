@@ -1,22 +1,20 @@
-// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/bulletin_page.dart';
-import 'package:lifeline_assistance/pages/calling1.dart';
-import 'package:lifeline_assistance/pages/calling2.dart';
-import 'package:lifeline_assistance/pages/calling3.dart';
+import 'package:lifeline_assistance/pages/call_page.dart';
+import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
-import 'package:lifeline_assistance/pages/settings_page.dart';
-import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
 
-class CallPage extends StatelessWidget {
-  const CallPage({super.key});
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         color: Colors.white,
+        height: 800,
+        width: 400,
         child: Stack(
           children: [
             Container(
@@ -41,18 +39,9 @@ class CallPage extends StatelessWidget {
             ),
 
             Container(
-              height: 800,
-              width: 300,
-              margin: EdgeInsets.only(left: 30, bottom: 240),
-              child: Image(
-                image: AssetImage("assets/map.png"),
-              ),
-            ),
-                       
-            Container(
-                margin: EdgeInsets.only(left: 130, top: 365),
+                margin: EdgeInsets.only(left: 137, top: 160),
                 child: Text(
-                  "Contacts",
+                  "Settings",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -65,99 +54,26 @@ class CallPage extends StatelessWidget {
             Container(
               height: 20,
               width: 400,
-              margin: EdgeInsets.only(top: 400),
+              margin: EdgeInsets.only(top: 210),
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
               ),
             ),
-          
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 440),
-                child: Text(
-                  "353-1829",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
 
             Container(
-                margin: EdgeInsets.only(left: 50, top: 460),
-                child: Text(
-                  "20m away",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 240),
+              child: Image(
+                image: AssetImage("assets/bell.png"),
+                fit: BoxFit.fill,
               ),
-
-              GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling1())),
-              child: Container(              
-                height: 70,
-                width: 300,
-                  margin: EdgeInsets.only(left: 50, top: 420),
-                  child: Text(
-                    "Talisay CT-TODA",
-                    style: TextStyle(
-                      color: Color.fromRGBO(88, 83, 83, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
             ),
 
             Container(
-              height: 20,
-              width: 400,
-              margin: EdgeInsets.only( top: 485),
-              child: Image(
-                image: AssetImage("assets/homepaged3.png"),
-              ),
-            ),                     
-
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 530),
+                margin: EdgeInsets.only(left: 70, top: 245),
                 child: Text(
-                  "462-4109",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 550),
-                child: Text(
-                  "38m away",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-              GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling2())),
-              child: Container(
-                height: 70,
-                width: 300,
-                margin: EdgeInsets.only(left: 50, top: 510),
-                child: Text(
-                  "Talisay Fireman Landline",
+                  "Notifications",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -166,51 +82,30 @@ class CallPage extends StatelessWidget {
                   ),
                 ),
               ),
-            ),   
 
             Container(
               height: 20,
               width: 400,
-              margin: EdgeInsets.only( top: 580),
+              margin: EdgeInsets.only(top: 280),
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
-              ),
-            ),            
-          
-            Container(
-              margin: EdgeInsets.only(left: 51, top: 620),
-              child: Text(
-                "09153315158",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 50, top: 640),
-              child: Text(
-                "38m away",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 310),
+              child: Image(
+                image: AssetImage("assets/night-mode.png"),
+                fit: BoxFit.fill,
               ),
-            ),    
+            ),
 
-            GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling3())),
-              child: Container(
-                height: 70,
-                width: 300,
-                margin: EdgeInsets.only(left: 50, top: 600),
+            Container(
+                margin: EdgeInsets.only(left: 70, top: 315),
                 child: Text(
-                  "Talisay Fireman Mobile",
+                  "Appearance",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -219,7 +114,143 @@ class CallPage extends StatelessWidget {
                   ),
                 ),
               ),
-            ),                 
+
+            Container(
+              height: 20,
+              width: 400,
+              margin: EdgeInsets.only(top: 350),
+              child: Image(
+                image: AssetImage("assets/homepaged3.png"),
+              ),
+            ),
+
+            Container(
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 380),
+              child: Image(
+                image: AssetImage("assets/lock.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 70, top: 385),
+                child: Text(
+                  "Privacy & Security",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+
+            Container(
+              height: 20,
+              width: 400,
+              margin: EdgeInsets.only(top: 420),
+              child: Image(
+                image: AssetImage("assets/homepaged3.png"),
+              ),
+            ),
+
+            Container(
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 450),
+              child: Image(
+                image: AssetImage("assets/support.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 70, top: 455),
+                child: Text(
+                  "Help & Support",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+
+            Container(
+              height: 20,
+              width: 400,
+              margin: EdgeInsets.only(top: 490),
+              child: Image(
+                image: AssetImage("assets/homepaged3.png"),
+              ),
+            ),
+
+            Container(
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 515),
+              child: Image(
+                image: AssetImage("assets/exit.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 70, top: 520),
+                child: Text(
+                  "Logout",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+
+            Container(
+              height: 20,
+              width: 400,
+              margin: EdgeInsets.only(top: 550),
+              child: Image(
+                image: AssetImage("assets/homepaged3.png"),
+              ),
+            ),
+
+            Container(
+              height: 32,
+              width: 32,
+              margin: EdgeInsets.only(left: 30, top: 580),
+              child: Image(
+                image: AssetImage("assets/info.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 70, top: 585),
+                child: Text(
+                  "About",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+
+            Container(
+              height: 20,
+              width: 400,
+              margin: EdgeInsets.only(top: 620),
+              child: Image(
+                image: AssetImage("assets/homepaged3.png"),
+              ),
+            ),
 
             Container(
               height: 20,
@@ -237,15 +268,28 @@ class CallPage extends StatelessWidget {
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
               ),
-            ),            
+            ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 16, top: 687),
+              Container(
+              height: 72,
+              width: 70,
+              margin: EdgeInsets.only(left: 230, top: 675),
               child: Image(
-                image: AssetImage("assets/homebulletin.png"),
+                image: AssetImage("assets/homepageredline.png"),
                 fit: BoxFit.cover,
+              ),
+            ),
+
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 16, top: 687),
+                child: Image(
+                  image: AssetImage("assets/homebulletin.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
@@ -262,34 +306,28 @@ class CallPage extends StatelessWidget {
                 ),
               ),
 
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-                child: Container(
-                height: 41,
-                width: 41,
-                margin: EdgeInsets.only(left: 81, top: 687),
-                child: Image(
-                  image: AssetImage("assets/chatbtn.png"),
-                  fit: BoxFit.cover,
-                ),
-                          ),
+              Container(
+              height: 41,
+              width: 41,
+              margin: EdgeInsets.only(left: 81, top: 687),
+              child: Image(
+                image: AssetImage("assets/chatbtn.png"),
+                fit: BoxFit.cover,
               ),
+            ),
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-              child: Container(
-                  margin: EdgeInsets.only(left: 84, top: 730),
-                  child: Text(
-                    "bulletin",
-                    style: TextStyle(
-                      color: Color.fromRGBO(216, 216, 216, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 11,
-                      fontWeight: FontWeight.w700,
-                    ),
+            Container(
+                margin: EdgeInsets.only(left: 84, top: 730),
+                child: Text(
+                  "bulletin",
+                  style: TextStyle(
+                    color: Color.fromRGBO(216, 216, 216, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-            ),
+              ),
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -298,7 +336,7 @@ class CallPage extends StatelessWidget {
                 width: 80,
                 margin: EdgeInsets.only(left: 144, top: 670),
                 child: Image(
-                  image: AssetImage("assets/call.png"),
+                  image: AssetImage("assets/homepaged9.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -311,7 +349,7 @@ class CallPage extends StatelessWidget {
                 width: 43,
                 margin: EdgeInsets.only(left: 244, top: 687),
                 child: Image(
-                  image: AssetImage("assets/settingsbtn.png"),
+                  image: AssetImage("assets/redsettings.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -324,7 +362,7 @@ class CallPage extends StatelessWidget {
                   child: Text(
                     "settings",
                     style: TextStyle(
-                      color: Color.fromRGBO(216, 216, 216, 1),
+                      color: Color.fromRGBO(191, 27, 27, 1),
                       fontFamily: "IBM Plex Mono",
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
@@ -360,7 +398,8 @@ class CallPage extends StatelessWidget {
                     ),
                   ),
                 ),
-            ),                    
+            ),
+            
           ],
         ),
       ),

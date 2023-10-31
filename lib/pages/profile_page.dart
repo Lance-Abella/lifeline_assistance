@@ -1,24 +1,20 @@
-// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/bulletin_page.dart';
-import 'package:lifeline_assistance/pages/calling1.dart';
-import 'package:lifeline_assistance/pages/calling2.dart';
-import 'package:lifeline_assistance/pages/calling3.dart';
-import 'package:lifeline_assistance/pages/profile_page.dart';
+import 'package:lifeline_assistance/pages/call_page.dart';
+import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
-import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
 
-class CallPage extends StatelessWidget {
-  const CallPage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
-        color: Colors.white,
         child: Stack(
-          children: [
+          children: [            
             Container(
               height: 1000,
               width: 500,
@@ -41,18 +37,9 @@ class CallPage extends StatelessWidget {
             ),
 
             Container(
-              height: 800,
-              width: 300,
-              margin: EdgeInsets.only(left: 30, bottom: 240),
-              child: Image(
-                image: AssetImage("assets/map.png"),
-              ),
-            ),
-                       
-            Container(
-                margin: EdgeInsets.only(left: 130, top: 365),
+                margin: EdgeInsets.only(left: 110, top: 160),
                 child: Text(
-                  "Contacts",
+                  "Your Account",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -63,163 +50,185 @@ class CallPage extends StatelessWidget {
               ),
 
             Container(
-              height: 20,
-              width: 400,
-              margin: EdgeInsets.only(top: 400),
-              child: Image(
-                image: AssetImage("assets/homepaged3.png"),
-              ),
-            ),
-          
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 440),
-                child: Text(
-                  "353-1829",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
+              height: 120,
+              width: 110,
+              margin: EdgeInsets.only(left: 128, top: 220),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/pp.png"),
+                  fit: BoxFit.cover,
                 ),
               ),
-
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 460),
-                child: Text(
-                  "20m away",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-              GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling1())),
-              child: Container(              
-                height: 70,
-                width: 300,
-                  margin: EdgeInsets.only(left: 50, top: 420),
-                  child: Text(
-                    "Talisay CT-TODA",
-                    style: TextStyle(
-                      color: Color.fromRGBO(88, 83, 83, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
             ),
 
             Container(
-              height: 20,
-              width: 400,
-              margin: EdgeInsets.only( top: 485),
-              child: Image(
-                image: AssetImage("assets/homepaged3.png"),
-              ),
-            ),                     
-
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 530),
+                margin: EdgeInsets.only(left: 110, top: 350),
                 child: Text(
-                  "462-4109",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-            Container(
-                margin: EdgeInsets.only(left: 50, top: 550),
-                child: Text(
-                  "38m away",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-              GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling2())),
-              child: Container(
-                height: 70,
-                width: 300,
-                margin: EdgeInsets.only(left: 50, top: 510),
-                child: Text(
-                  "Talisay Fireman Landline",
+                  "Lance Mathew Abella",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
                     fontSize: 17,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-              ),
-            ),   
+            ),
 
             Container(
-              height: 20,
-              width: 400,
-              margin: EdgeInsets.only( top: 580),
-              child: Image(
-                image: AssetImage("assets/homepaged3.png"),
-              ),
-            ),            
-          
-            Container(
-              margin: EdgeInsets.only(left: 51, top: 620),
+              margin: EdgeInsets.only(left: 60, top: 400),
               child: Text(
-                "09153315158",
+                "Date of Birth:",
                 style: TextStyle(
                   color: Color.fromRGBO(88, 83, 83, 1),
                   fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 50, top: 640),
-              child: Text(
-                "38m away",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),    
-
-            GestureDetector(
-              onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling3())),
-              child: Container(
-                height: 70,
-                width: 300,
-                margin: EdgeInsets.only(left: 50, top: 600),
+                margin: EdgeInsets.only(left: 170, top: 400),
                 child: Text(
-                  "Talisay Fireman Mobile",
+                  "February 27, 2002",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
                     fontSize: 17,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 128, top: 430),
+              child: Text(
+                "Sex:",
+                style: TextStyle(
+                  color: Color.fromRGBO(88, 83, 83, 1),
+                  fontFamily: "IBM Plex Mono",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-            ),                 
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 170, top: 430),
+                child: Text(
+                  "Male",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 30, top: 460),
+              child: Text(
+                "Contact Number:",
+                style: TextStyle(
+                  color: Color.fromRGBO(88, 83, 83, 1),
+                  fontFamily: "IBM Plex Mono",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 170, top: 460),
+                child: Text(
+                  "09945641269",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 68, top: 490),
+              child: Text(
+                "Occupation:",
+                style: TextStyle(
+                  color: Color.fromRGBO(88, 83, 83, 1),
+                  fontFamily: "IBM Plex Mono",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 170, top: 490),
+                child: Text(
+                  "Student",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 92, top: 520),
+              child: Text(
+                "Address:",
+                style: TextStyle(
+                  color: Color.fromRGBO(88, 83, 83, 1),
+                  fontFamily: "IBM Plex Mono",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 170, top: 520),
+                child: Text(
+                  "Dumlog, Talisay City",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 70, top: 550),
+              child: Text(
+                "Blood Type:",
+                style: TextStyle(
+                  color: Color.fromRGBO(88, 83, 83, 1),
+                  fontFamily: "IBM Plex Mono",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(left: 170, top: 550),
+                child: Text(
+                  "B+",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+            ),
 
             Container(
               height: 20,
@@ -237,15 +246,28 @@ class CallPage extends StatelessWidget {
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
               ),
-            ),            
+            ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 16, top: 687),
+              Container(
+              height: 72,
+              width: 70,
+              margin: EdgeInsets.only(left: 295, top: 675),
               child: Image(
-                image: AssetImage("assets/homebulletin.png"),
+                image: AssetImage("assets/homepageredline.png"),
                 fit: BoxFit.cover,
+              ),
+            ),
+
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 16, top: 687),
+                child: Image(
+                  image: AssetImage("assets/homebulletin.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
@@ -262,34 +284,28 @@ class CallPage extends StatelessWidget {
                 ),
               ),
 
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-                child: Container(
-                height: 41,
-                width: 41,
-                margin: EdgeInsets.only(left: 81, top: 687),
-                child: Image(
-                  image: AssetImage("assets/chatbtn.png"),
-                  fit: BoxFit.cover,
-                ),
-                          ),
+              Container(
+              height: 41,
+              width: 41,
+              margin: EdgeInsets.only(left: 81, top: 687),
+              child: Image(
+                image: AssetImage("assets/chatbtn.png"),
+                fit: BoxFit.cover,
               ),
+            ),
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-              child: Container(
-                  margin: EdgeInsets.only(left: 84, top: 730),
-                  child: Text(
-                    "bulletin",
-                    style: TextStyle(
-                      color: Color.fromRGBO(216, 216, 216, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 11,
-                      fontWeight: FontWeight.w700,
-                    ),
+            Container(
+                margin: EdgeInsets.only(left: 84, top: 730),
+                child: Text(
+                  "bulletin",
+                  style: TextStyle(
+                    color: Color.fromRGBO(216, 216, 216, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-            ),
+              ),
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -298,7 +314,7 @@ class CallPage extends StatelessWidget {
                 width: 80,
                 margin: EdgeInsets.only(left: 144, top: 670),
                 child: Image(
-                  image: AssetImage("assets/call.png"),
+                  image: AssetImage("assets/homepaged9.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -340,7 +356,7 @@ class CallPage extends StatelessWidget {
                 width: 43,
                 margin: EdgeInsets.only(left: 305, top: 687),
                 child: Image(
-                  image: AssetImage("assets/personbtn.png"),
+                  image: AssetImage("assets/redperson.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -353,14 +369,18 @@ class CallPage extends StatelessWidget {
                   child: Text(
                     "profile",
                     style: TextStyle(
-                      color: Color.fromRGBO(216, 216, 216, 1),
+                      color: Color.fromRGBO(191, 27, 27, 1),
                       fontFamily: "IBM Plex Mono",
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
-            ),                    
+            ),
+
+
+
+
           ],
         ),
       ),

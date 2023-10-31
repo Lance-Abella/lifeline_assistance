@@ -2,7 +2,11 @@
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:lifeline_assistance/pages/bulletin_page.dart';
+import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/profile_page.dart';
+import 'package:lifeline_assistance/pages/settings_page.dart';
 
 class VolunteerRegistration extends StatelessWidget {
   const VolunteerRegistration({super.key});
@@ -186,7 +190,7 @@ class VolunteerRegistration extends StatelessWidget {
                 ),
               ),
 
-              Container(
+            Container(
               height: 20,
               width: 400,
               margin: EdgeInsets.only(top: 665.5),
@@ -204,7 +208,7 @@ class VolunteerRegistration extends StatelessWidget {
               ),
             ),
 
-              Container(
+            Container(
               height: 72,
               width: 70,
               margin: EdgeInsets.only(left: 0, top: 675),
@@ -237,84 +241,105 @@ class VolunteerRegistration extends StatelessWidget {
                 ),
               ),
 
-              Container(
-              height: 41,
-              width: 41,
-              margin: EdgeInsets.only(left: 81, top: 687),
-              child: Image(
-                image: AssetImage("assets/chatbtn.png"),
-                fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+                child: Container(
+                height: 41,
+                width: 41,
+                margin: EdgeInsets.only(left: 81, top: 687),
+                child: Image(
+                  image: AssetImage("assets/chatbtn.png"),
+                  fit: BoxFit.cover,
+                ),
+                          ),
               ),
-            ),
 
-            Container(
-                margin: EdgeInsets.only(left: 84, top: 730),
-                child: Text(
-                  "bulletin",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 84, top: 730),
+                  child: Text(
+                    "bulletin",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
-
-            Container(
-              height: 80,
-              width: 80,
-              margin: EdgeInsets.only(left: 144, top: 670),
-              child: Image(
-                image: AssetImage("assets/homepaged9.png"),
-                fit: BoxFit.cover,
-              ),
             ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 244, top: 687),
-              child: Image(
-                image: AssetImage("assets/settingsbtn.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-
-            Container(
-                margin: EdgeInsets.only(left: 247, top: 730),
-                child: Text(
-                  "settings",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
-                  ),
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
+              child: Container(
+                height: 80,
+                width: 80,
+                margin: EdgeInsets.only(left: 144, top: 670),
+                child: Image(
+                  image: AssetImage("assets/homepaged9.png"),
+                  fit: BoxFit.cover,
                 ),
               ),
+            ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 305, top: 687),
-              child: Image(
-                image: AssetImage("assets/personbtn.png"),
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 244, top: 687),
+                child: Image(
+                  image: AssetImage("assets/settingsbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 310, top: 730),
-                child: Text(
-                  "profile",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 247, top: 730),
+                  child: Text(
+                    "settings",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
+            ),
+
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 305, top: 687),
+                child: Image(
+                  image: AssetImage("assets/personbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
+            ),
+
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 310, top: 730),
+                  child: Text(
+                    "profile",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+            ),  
 
           ],
         ),

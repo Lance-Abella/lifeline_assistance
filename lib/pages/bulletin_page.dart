@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulleting_page2.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/profile_page.dart';
+import 'package:lifeline_assistance/pages/settings_page.dart';
 
 class BulletinPage extends StatelessWidget {
   const BulletinPage({super.key});
@@ -41,7 +43,7 @@ class BulletinPage extends StatelessWidget {
               child: Container(
                 height: 50,
                 width: 50,
-                margin: EdgeInsets.only(left: 20, top: 90),
+                margin: EdgeInsets.only(left: 22, top: 90),
                 child: Image(
                   image: AssetImage("assets/refresh.png"),
                   fit: BoxFit.cover,
@@ -266,51 +268,63 @@ class BulletinPage extends StatelessWidget {
               ),
             ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 244, top: 687),
-              child: Image(
-                image: AssetImage("assets/settingsbtn.png"),
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 244, top: 687),
+                child: Image(
+                  image: AssetImage("assets/settingsbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 247, top: 730),
-                child: Text(
-                  "settings",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 247, top: 730),
+                  child: Text(
+                    "settings",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 305, top: 687),
-              child: Image(
-                image: AssetImage("assets/personbtn.png"),
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 305, top: 687),
+                child: Image(
+                  image: AssetImage("assets/personbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 310, top: 730),
-                child: Text(
-                  "profile",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 310, top: 730),
+                  child: Text(
+                    "profile",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
           ],
         ),
