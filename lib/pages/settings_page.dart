@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/login_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -188,28 +189,36 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
 
-            Container(
-              height: 32,
-              width: 32,
-              margin: EdgeInsets.only(left: 30, top: 515),
-              child: Image(
-                image: AssetImage("assets/exit.png"),
-                fit: BoxFit.fill,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage())),
+              child: Container(
+                height: 32,
+                width: 32,
+                margin: EdgeInsets.only(left: 30, top: 515),
+                child: Image(
+                  image: AssetImage("assets/exit.png"),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 70, top: 520),
-                child: Text(
-                  "Logout",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage())),
+              child: Container(                
+                height: 35,
+                width: 200,
+                  margin: EdgeInsets.only(left: 70, top: 520),
+                  child: Text(
+                    "Logout",
+                    style: TextStyle(
+                      color: Color.fromRGBO(88, 83, 83, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
             Container(
               height: 20,
