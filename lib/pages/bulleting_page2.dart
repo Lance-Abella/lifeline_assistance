@@ -1,12 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_element, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/bulleting_page2.dart';
+import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
 
-class BulletinPage extends StatelessWidget {
-  const BulletinPage({super.key});
+class BulletinPage2 extends StatelessWidget {
+  const BulletinPage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +65,7 @@ class BulletinPage extends StatelessWidget {
               ),
             ),
 
+
             Container(
               height: 20,
               width: 400,
@@ -85,18 +86,81 @@ class BulletinPage extends StatelessWidget {
             ),
 
             Container(
-              height: 20,
-              width: 400,
-              margin: EdgeInsets.only(top: 255),
+              height: 40,
+              width: 2,
+              margin: EdgeInsets.only(left: 40, top: 220),
               child: Image(
-                image: AssetImage("assets/homepaged3.png"),
+                image: AssetImage("assets/redvline.png"),
+                fit: BoxFit.fill,
               ),
             ),
 
             Container(
+              height: 45,
+              width: 135,
+              margin: EdgeInsets.only(left: 22, top: 265),
+              child: Image(
+                image: AssetImage("assets/soy.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+              height: 45,
+              width: 250,
+              margin: EdgeInsets.only(left: 70, top: 310),
+              child: Image(
+                image: AssetImage("assets/soypost.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+              height: 55,
+              width: 3.5,
+              margin: EdgeInsets.only(left: 39, top: 314),
+              child: Image(
+                image: AssetImage("assets/brokenarrow.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+              height: 45,
+              width: 42,
+              margin: EdgeInsets.only(left: 20, top: 370),
+              child: Image(
+                image: AssetImage("assets/p1.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+              height: 23,
+              width: 175,
+              margin: EdgeInsets.only(left: 77, top: 365),
+              child: Image(
+                image: AssetImage("assets/20.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            Container(
+              height: 28,
+              width: 260,
+              margin: EdgeInsets.only(left: 70, top: 392),
+              child: Image(
+                image: AssetImage("assets/comment.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            
+
+            Container(
               height: 90,
               width: 320,
-              margin: EdgeInsets.only(left: 20, top: 275),
+              margin: EdgeInsets.only(left: 20, top: 430),
               child: Image(
                 image: AssetImage("assets/elizabeth.png"),
                 fit: BoxFit.fill,
@@ -106,7 +170,7 @@ class BulletinPage extends StatelessWidget {
             Container(
               height: 20,
               width: 400,
-              margin: EdgeInsets.only(top: 390),
+              margin: EdgeInsets.only(top: 415),
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
               ),
@@ -115,7 +179,7 @@ class BulletinPage extends StatelessWidget {
             Container(
               height: 90,
               width: 320,
-              margin: EdgeInsets.only(left: 20, top: 410),
+              margin: EdgeInsets.only(left: 20, top: 570),
               child: Image(
                 image: AssetImage("assets/liam.png"),
                 fit: BoxFit.fill,
@@ -125,54 +189,48 @@ class BulletinPage extends StatelessWidget {
             Container(
               height: 20,
               width: 400,
-              margin: EdgeInsets.only(top: 530),
+              margin: EdgeInsets.only(top: 550),
               child: Image(
                 image: AssetImage("assets/homepaged3.png"),
               ),
             ),
 
-            Container(
-              height: 110,
-              width: 330,
-              margin: EdgeInsets.only(left: 20, top: 550),
-              child: Image(
-                image: AssetImage("assets/perks.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
+            
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage2())),
-              child: Container(
-                height: 23,
-                width: 160,
-                margin: EdgeInsets.only(left: 80, top: 235),
-                child: Image(
-                  image: AssetImage("assets/10.png"),
-                  fit: BoxFit.fill,
-                ),
+            Container(
+              height: 23,
+              width: 175,
+              margin: EdgeInsets.only(left: 77, top: 235),
+              child: Image(
+                image: AssetImage("assets/red10.png"),
+                fit: BoxFit.fill,
               ),
             ),
 
             Container(
               height: 23,
               width: 165,
-              margin: EdgeInsets.only(left: 80, top: 370),
+              margin: EdgeInsets.only(left: 80, top: 530),
               child: Image(
                 image: AssetImage("assets/2.png"),
                 fit: BoxFit.fill,
               ),
             ),
 
-            Container(
-              height: 23,
-              width: 165,
-              margin: EdgeInsets.only(left: 80, top: 510),
-              child: Image(
-                image: AssetImage("assets/4.png"),
-                fit: BoxFit.fill,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              child: Container(
+                height: 27,
+                width: 28,
+                margin: EdgeInsets.only(left: 320, top: 170),
+                child: Image(
+                  image: AssetImage("assets/x.png"),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
+
+           
 
             
 

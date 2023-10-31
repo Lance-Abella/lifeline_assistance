@@ -1,52 +1,24 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, no_logic_in_create_state, library_private_types_in_public_api, unnecessary_new
+// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals
 
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
+import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
-import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/registered_volunteers_page.dart';
 import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
-import 'package:video_player/video_player.dart';
 
-class Homepage extends StatefulWidget {
+class CallPage extends StatefulWidget {
+  const CallPage({super.key});
+
   @override
-  _HomepageState createState() => _HomepageState();
+  State<CallPage> createState() => _CallPageState();
 }
 
-class _HomepageState extends State<Homepage> {
-  late VideoPlayerController _controller1;
-  late VideoPlayerController _controller2;
-  late VideoPlayerController _controller3;
-  late List<VideoPlayerController> videos;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller1 = VideoPlayerController.asset('assets/vid1.mp4');
-    _controller2 = VideoPlayerController.asset('assets/vid2.mp4');
-    _controller3 = VideoPlayerController.asset('assets/vid3.mp4');
-
-    _controller1.initialize();
-    _controller2.initialize();
-    _controller3.initialize();
-
-    videos = [
-      _controller1,
-      _controller2,
-      _controller3,
-    ];
-  }
-
-  @override
-  void dispose() {
-    for (var controller in videos) {
-      controller.dispose();
-    }
-
-    super.dispose();
-  }
-
+class _CallPageState extends State<CallPage> {
+  GoogleMapController? _controller;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,50 +47,35 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
 
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(bottom: 210),
-                height: 201,
-                width: 300,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 1.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      offset: new Offset(10.0, 10.0),
-                      blurRadius: 10.0,
-                    ),
-                  ],
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 450),
+              height: 200, // Adjust the height as needed
+              width: 360, // Adjust the width as needed
+              child: GoogleMap(
+                onMapCreated: (controller) {
+                  setState(() {
+                    _controller = controller;
+                  });
+                },
+                initialCameraPosition: CameraPosition(
+                  target: LatLng(10.3157, 123.8854), // Adjust the initial map coordinates
+                  zoom: 15, // You can adjust the initial zoom level
                 ),
-                child: CarouselSlider.builder(
-                  slideTransform: CubeTransform(),
-                  slideIndicator: CircularSlideIndicator(
-                    padding: EdgeInsets.all(10),
-                    currentIndicatorColor: Colors.white,
+                markers: Set<Marker>.from([
+                  Marker(
+                    markerId: MarkerId('marker_1'), // Change this for different markers
+                    position: LatLng(10.3157, 123.8854), // Adjust the marker coordinates
+                    infoWindow: InfoWindow(title: 'Marker Title'),
                   ),
-                  slideBuilder: (int index) {
-                    final controller = videos[index];
-                    controller.pause();
-                    return GestureDetector(
-                      onTap: () {
-                        if (controller.value.isPlaying) {
-                          controller.pause();
-                        } else {
-                          controller.play();
-                        }
-                      },
-                      child: VideoPlayer(controller),
-                    );
-                  },
-                  itemCount: videos.length,
-                ),
+                  // Add more markers if needed
+                ]),
               ),
-            ),
+            ),            
 
             Container(
                 margin: EdgeInsets.only(left: 135, top: 400),
                 child: Text(
-                  "Weekly Tips",
+                  "Contacts",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -387,7 +344,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-
-
-
-

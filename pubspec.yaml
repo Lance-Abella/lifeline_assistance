@@ -38,6 +38,7 @@ dependencies:
   flutter_carousel_slider: ^1.0.8
   video_player: ^2.7.2
   file_picker: ^5.0.1
+  google_maps_flutter: ^2.0.11
   
   
 
