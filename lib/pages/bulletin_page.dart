@@ -196,7 +196,7 @@ class BulletinPage extends StatelessWidget {
               ),
             ),
 
-              Container(
+            Container(
               height: 72,
               width: 70,
               margin: EdgeInsets.only(left: 65, top: 675),
@@ -219,20 +219,23 @@ class BulletinPage extends StatelessWidget {
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 24, top: 730),
-                child: Text(
-                  "home",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 24, top: 730),
+                  child: Text(
+                    "home",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
-              Container(
+            Container(
               height: 41,
               width: 41,
               margin: EdgeInsets.only(left: 81, top: 687),

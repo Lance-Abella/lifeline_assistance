@@ -5,6 +5,7 @@ import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/calling1.dart';
 import 'package:lifeline_assistance/pages/calling2.dart';
 import 'package:lifeline_assistance/pages/calling3.dart';
+import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
 import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
@@ -239,28 +240,34 @@ class CallPage extends StatelessWidget {
               ),
             ),            
 
-            Container(
-              height: 43,
-              width: 43,
-              margin: EdgeInsets.only(left: 16, top: 687),
-              child: Image(
-                image: AssetImage("assets/homebulletin.png"),
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                height: 43,
+                width: 43,
+                margin: EdgeInsets.only(left: 16, top: 687),
+                child: Image(
+                  image: AssetImage("assets/homebulletin.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 24, top: 730),
-                child: Text(
-                  "home",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 24, top: 730),
+                  child: Text(
+                    "home",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
@@ -291,16 +298,13 @@ class CallPage extends StatelessWidget {
                 ),
             ),
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
-              child: Container(
-                height: 80,
-                width: 80,
-                margin: EdgeInsets.only(left: 144, top: 670),
-                child: Image(
-                  image: AssetImage("assets/call.png"),
-                  fit: BoxFit.cover,
-                ),
+            Container(
+              height: 80,
+              width: 80,
+              margin: EdgeInsets.only(left: 144, top: 670),
+              child: Image(
+                image: AssetImage("assets/call.png"),
+                fit: BoxFit.cover,
               ),
             ),
 

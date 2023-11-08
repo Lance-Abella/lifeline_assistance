@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/login_page.dart';
@@ -302,41 +303,50 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 24, top: 730),
-                child: Text(
-                  "home",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 24, top: 730),
+                  child: Text(
+                    "home",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
-              Container(
-              height: 41,
-              width: 41,
-              margin: EdgeInsets.only(left: 81, top: 687),
-              child: Image(
-                image: AssetImage("assets/chatbtn.png"),
-                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              child: Container(
+                height: 41,
+                width: 41,
+                margin: EdgeInsets.only(left: 81, top: 687),
+                child: Image(
+                  image: AssetImage("assets/chatbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 84, top: 730),
-                child: Text(
-                  "bulletin",
-                  style: TextStyle(
-                    color: Color.fromRGBO(216, 216, 216, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              child: Container(
+                  margin: EdgeInsets.only(left: 84, top: 730),
+                  child: Text(
+                    "bulletin",
+                    style: TextStyle(
+                      color: Color.fromRGBO(216, 216, 216, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
+            ),
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -351,34 +361,28 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-              child: Container(
-                height: 43,
-                width: 43,
-                margin: EdgeInsets.only(left: 244, top: 687),
-                child: Image(
-                  image: AssetImage("assets/redsettings.png"),
-                  fit: BoxFit.cover,
-                ),
+            Container(
+              height: 43,
+              width: 43,
+              margin: EdgeInsets.only(left: 244, top: 687),
+              child: Image(
+                image: AssetImage("assets/redsettings.png"),
+                fit: BoxFit.cover,
               ),
             ),
 
-            GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-              child: Container(
-                  margin: EdgeInsets.only(left: 247, top: 730),
-                  child: Text(
-                    "settings",
-                    style: TextStyle(
-                      color: Color.fromRGBO(191, 27, 27, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 11,
-                      fontWeight: FontWeight.w700,
-                    ),
+            Container(
+                margin: EdgeInsets.only(left: 247, top: 730),
+                child: Text(
+                  "settings",
+                  style: TextStyle(
+                    color: Color.fromRGBO(191, 27, 27, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-            ),
+              ),
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
