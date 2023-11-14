@@ -109,129 +109,14 @@ class BulletinPage extends StatelessWidget {
                 ),
               ),
       
-              SingleChildScrollView(
-                child: Stack(
-                  children: [
-                    Container(
-                    height: 20,
-                    width: 400,
-                    margin: EdgeInsets.only(top: 160),
-                    child: Image(
-                      image: AssetImage("assets/homepaged3.png"),
-                    ),
+              Container(
+                color: Colors.red,
+                child: SingleChildScrollView(
+                  child: Stack(
+                    children: [
+                      
+                    ] 
                   ),
-              
-                  Container(
-                  height: 60,
-                  width: 320,
-                  margin: EdgeInsets.only(left: 20, top: 170),
-                  child: Image(
-                    image: AssetImage("assets/harper.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                Container(
-                  height: 20,
-                  width: 400,
-                  margin: EdgeInsets.only(top: 255),
-                  child: Image(
-                    image: AssetImage("assets/homepaged3.png"),
-                  ),
-                ),
-                    
-                Container(
-                  height: 90,
-                  width: 320,
-                  margin: EdgeInsets.only(left: 20, top: 275),
-                  child: Image(
-                    image: AssetImage("assets/elizabeth.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                Container(
-                  height: 20,
-                  width: 400,
-                  margin: EdgeInsets.only(top: 390),
-                  child: Image(
-                    image: AssetImage("assets/homepaged3.png"),
-                  ),
-                ),
-                    
-                Container(
-                  height: 90,
-                  width: 320,
-                  margin: EdgeInsets.only(left: 20, top: 410),
-                  child: Image(
-                    image: AssetImage("assets/liam.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                Container(
-                  height: 20,
-                  width: 400,
-                  margin: EdgeInsets.only(top: 530),
-                  child: Image(
-                    image: AssetImage("assets/homepaged3.png"),
-                  ),
-                ),
-                    
-                Container(
-                  height: 110,
-                  width: 330,
-                  margin: EdgeInsets.only(left: 20, top: 550),
-                  child: Image(
-                    image: AssetImage("assets/perks.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                GestureDetector(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage2())),
-                  child: Container(
-                    height: 23,
-                    width: 160,
-                    margin: EdgeInsets.only(left: 80, top: 235),
-                    child: Image(
-                      image: AssetImage("assets/10.png"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                    
-                Container(
-                  height: 23,
-                  width: 165,
-                  margin: EdgeInsets.only(left: 80, top: 370),
-                  child: Image(
-                    image: AssetImage("assets/2.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                Container(
-                  height: 23,
-                  width: 165,
-                  margin: EdgeInsets.only(left: 80, top: 510),
-                  child: Image(
-                    image: AssetImage("assets/4.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                    
-                
-                    
-                Container(
-                  height: 20,
-                  width: 400,
-                  margin: EdgeInsets.only(top: 665.5),
-                  child: Image(
-                    image: AssetImage("assets/homepaged3.png"),
-                  ),
-                ),
-                  ] 
                 ),
               ),
       
@@ -298,7 +183,7 @@ class BulletinPage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 84, top: 730),
                   child: Text(
-                    "bulletin",
+                    "forum",
                     style: TextStyle(
                       color: Color.fromRGBO(191, 27, 27, 1),
                       fontFamily: "IBM Plex Mono",

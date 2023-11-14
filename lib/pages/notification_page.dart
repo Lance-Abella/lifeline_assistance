@@ -135,7 +135,9 @@ class Notif extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(top: 10, bottom: 10),
                 margin: EdgeInsets.only(top: 190),
+                height: 490,
                 child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   child: Stack(
                     children: [
                     Container(
@@ -499,7 +501,7 @@ class Notif extends StatelessWidget {
                 child: Container(
                     margin: EdgeInsets.only(left: 84, top: 730),
                     child: Text(
-                      "bulletin",
+                      "forum",
                       style: TextStyle(
                         color: Color.fromRGBO(216, 216, 216, 1),
                         fontFamily: "IBM Plex Mono",

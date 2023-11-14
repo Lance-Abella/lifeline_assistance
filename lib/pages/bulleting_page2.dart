@@ -301,7 +301,7 @@ class BulletinPage2 extends StatelessWidget {
             Container(
                 margin: EdgeInsets.only(left: 84, top: 730),
                 child: Text(
-                  "bulletin",
+                  "forum",
                   style: TextStyle(
                     color: Color.fromRGBO(191, 27, 27, 1),
                     fontFamily: "IBM Plex Mono",

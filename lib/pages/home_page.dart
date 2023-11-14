@@ -464,105 +464,6 @@ class _HomepageState extends State<Homepage> {
                   ),
               ),
       
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>VolunteerRegistration())),
-              //   child: Container(
-              //     height: 50,
-              //     width: 50,
-              //     margin: EdgeInsets.only(left: 50, top: 450),
-              //     child: ClipRRect(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //       child: Image(
-              //         image: AssetImage("assets/homepaged4.png"),
-              //         fit: BoxFit.cover,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>VolunteerRegistration())),
-              //   child: Container(
-              //     height: 50,
-              //     width: 50,
-              //     margin: EdgeInsets.only(left: 50, top: 450),
-              //     child: Image(
-              //       image: AssetImage("assets/homepaged5.png"),
-              //     ),
-              //   ),
-              // ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>VolunteerRegistration())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 120, top: 465),
-              //       child: Text(
-              //         "Be A Volunteer",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(88, 83, 83, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 16,
-              //           fontWeight: FontWeight.w400,
-              //         ),
-              //       ),
-              //     ),
-              // ),
-      
-              
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegisteredVolunteers())),
-              //   child: Container(
-              //     height: 50,
-              //     width: 50,
-              //     margin: EdgeInsets.only(left: 50, top: 520),
-              //     child: ClipRRect(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //       child: Image(
-              //         image: AssetImage("assets/homepaged4.png"),
-              //         fit: BoxFit.cover,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegisteredVolunteers())),
-              //   child: Container(
-              //     height: 50,
-              //     width: 50,
-              //     margin: EdgeInsets.only(left: 50, top: 520),
-              //     child: Image(
-              //       image: AssetImage("assets/homepaged6.png"),
-              //     ),
-              //   ),
-              // ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegisteredVolunteers())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 120, top: 535),
-              //       child: Text(
-              //         "Registered Volunteers",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(88, 83, 83, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 16,
-              //           fontWeight: FontWeight.w400,
-              //         ),
-              //       ),
-              //     ),
-              // ),
-      
-              // Container(
-              //   height: 20,
-              //   width: 400,
-              //   margin: EdgeInsets.only(top: 570),
-              //   child: Image(
-              //     image: AssetImage("assets/homepaged3.png"),
-              //   ),
-              // ),
-      
               Container(
                 height: 20,
                 width: 400,
@@ -632,7 +533,7 @@ class _HomepageState extends State<Homepage> {
                 child: Container(
                     margin: EdgeInsets.only(left: 84, top: 730),
                     child: Text(
-                      "bulletin",
+                      "forum",
                       style: TextStyle(
                         color: Color.fromRGBO(216, 216, 216, 1),
                         fontFamily: "IBM Plex Mono",
