@@ -73,13 +73,16 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              Container(
-                height: 32,
-                width: 32,
-                margin: EdgeInsets.only(left: 30, top: 240),
-                child: Image(
-                  image: AssetImage("assets/bell.png"),
-                  fit: BoxFit.fill,
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
+                child: Container(
+                  height: 32,
+                  width: 32,
+                  margin: EdgeInsets.only(left: 30, top: 240),
+                  child: Image(
+                    image: AssetImage("assets/bell.png"),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
       
