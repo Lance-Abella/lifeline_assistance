@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
+import 'package:lifeline_assistance/pages/notification_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
 import 'package:video_player/video_player.dart';
@@ -112,9 +113,7 @@ class _HomepageState extends State<Homepage> {
                 child: Image(
                   image: AssetImage("assets/homepaged3.png"),
                 ),
-              ),
-
-              
+              ),              
       
               Container(                
                 margin: EdgeInsets.only(top: 470),
@@ -367,9 +366,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
               ),
-      
-      
-      
+                  
               Center(
                 child: Container(
                   margin: EdgeInsets.only(bottom: 160),
@@ -408,6 +405,63 @@ class _HomepageState extends State<Homepage> {
                     itemCount: videos.length,
                   ),
                 ),
+              ),
+
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
+                child: Container(
+                  height: 47,
+                  width: 35,
+                  margin: EdgeInsets.only(left: 305, top: 92),
+                  child: Image(
+                    image: AssetImage("assets/notif.png"),
+                  ),
+                ),
+              ),
+
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
+                child: Container(                      
+                  width: 50,             
+                  margin: EdgeInsets.only(left: 305, top: 130),                  
+                  child: Text(
+                    "Notif",
+                    style: TextStyle(
+                      color: Color.fromRGBO(191, 27, 27, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  margin: EdgeInsets.only(left: 22, top: 90),
+                  child: Image(
+                    image: AssetImage("assets/rotate.png"),              
+                  ),
+                ),
+              ),
+
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
+                child: Container(              
+                    margin: EdgeInsets.only(left: 25, top: 130),
+                    child: Text(
+                      "Refresh",
+                      style: TextStyle(
+                        color: Color.fromRGBO(191, 27, 27, 1),
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
               ),
       
               // GestureDetector(
