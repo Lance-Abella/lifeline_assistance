@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, no_logic_in_create_state, library_private_types_in_public_api, unnecessary_new
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, no_logic_in_create_state, library_private_types_in_public_api, unnecessary_new, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
@@ -116,26 +116,24 @@ class _HomepageState extends State<Homepage> {
 
               
       
-              Container(
-                // color: Colors.red,
+              Container(                
                 margin: EdgeInsets.only(top: 470),
                 height: 214,
-                padding: EdgeInsets.only(left:5, right: 5, bottom: 10),
+                padding: EdgeInsets.only(left:5, right: 5, bottom: 15),
                 child: SingleChildScrollView(
-                  
+                  physics: BouncingScrollPhysics(),
                   child: Stack(
                     children: [
                       Container(
                         height: 53,
-                        width: 59,
-                        margin: EdgeInsets.only(top: 30),
+                        width: 59,                        
                         child: Image(
                           image: AssetImage("assets/official-profile.png"),
                         ),
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:60, top: 40),
+                        margin: EdgeInsets.only(left:60, top: 10),
                         child: Text(
                           "Talisay SK Chairman",
                           style: TextStyle(
@@ -148,7 +146,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:61, top: 58),
+                        margin: EdgeInsets.only(left:61, top: 28),
                         child: Text(
                           "1w",
                           style: TextStyle(
@@ -161,7 +159,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left: 71, top: 75),
+                        margin: EdgeInsets.only(left: 71, top: 45),
                         child: Text(
                           "What:",
                           style: TextStyle(
@@ -174,7 +172,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left: 117, top: 75),
+                        margin: EdgeInsets.only(left: 117, top: 45),
                         child: Text(
                           "Job Fair 2023 - Connecting Job Seekers with Opportunities.",
                           style: TextStyle(
@@ -187,7 +185,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:71 , top: 110),
+                        margin: EdgeInsets.only(left:71 , top: 80),
                         child: Text(
                           "When:",
                           style: TextStyle(
@@ -200,7 +198,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left: 119, top: 110),
+                        margin: EdgeInsets.only(left: 119, top: 80),
                         child: Text(
                           "November 7, 2023 (8:00 AM - 3:00 PM)",
                           style: TextStyle(
@@ -213,7 +211,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:71, top: 145),
+                        margin: EdgeInsets.only(left:71, top: 115),
                         child: Text(
                           "Where:",
                           style: TextStyle(
@@ -226,7 +224,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left: 117, top: 145),
+                        margin: EdgeInsets.only(left: 117, top: 115),
                         child: Text(
                           "Talisay City Hall",
                           style: TextStyle(
@@ -241,7 +239,7 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         height: 80,
                         width: 59,
-                        margin: EdgeInsets.only(top: 84),
+                        margin: EdgeInsets.only(top: 54),
                         child: Image(
                           image: AssetImage("assets/redvline.png"),
                         ),
@@ -250,14 +248,14 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         height: 53,
                         width: 59,
-                        margin: EdgeInsets.only(top: 165),
+                        margin: EdgeInsets.only(top: 135),
                         child: Image(
                           image: AssetImage("assets/official-profile.png"),
                         ),
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:60, top: 175),
+                        margin: EdgeInsets.only(left:60, top: 145),
                         child: Text(
                           "Talisay Mayor",
                           style: TextStyle(
@@ -270,7 +268,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left:61, top: 192),
+                        margin: EdgeInsets.only(left:61, top: 162),
                         child: Text(
                           "2w",
                           style: TextStyle(
@@ -283,7 +281,7 @@ class _HomepageState extends State<Homepage> {
                       ),
       
                       Container(                  
-                        margin: EdgeInsets.only(left: 72, top: 207),
+                        margin: EdgeInsets.only(left: 72, top: 177),
                         child: Text(
                           "Emergency Preparedness - Have a Plan, Stay Informed.",
                           style: TextStyle(
@@ -298,7 +296,7 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         height: 20,
                         width: 400,
-                        margin: EdgeInsets.only(top: 235),
+                        margin: EdgeInsets.only(top: 205),
                         child: Image(
                           image: AssetImage("assets/homepaged3.png"),
                         ),
@@ -307,14 +305,14 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         height: 53,
                         width: 59,
-                        margin: EdgeInsets.only(top: 250),
+                        margin: EdgeInsets.only(top: 220),
                         child: Image(
                           image: AssetImage("assets/official-profile.png"),
                         ),
                       ),
 
                       Container(                  
-                        margin: EdgeInsets.only(left:60, top: 260),
+                        margin: EdgeInsets.only(left:60, top: 230),
                         child: Text(
                           "Talisay Mayor",
                           style: TextStyle(
@@ -327,7 +325,7 @@ class _HomepageState extends State<Homepage> {
                       ),
 
                       Container(                  
-                        margin: EdgeInsets.only(left:61, top: 277),
+                        margin: EdgeInsets.only(left:61, top: 247),
                         child: Text(
                           "3w",
                           style: TextStyle(
@@ -340,7 +338,7 @@ class _HomepageState extends State<Homepage> {
                       ),
 
                       Container(                  
-                        margin: EdgeInsets.only(left: 72, top: 290),
+                        margin: EdgeInsets.only(left: 72, top: 260),
                         child: Text(
                           "Roadblock Alert! Dumlog Street is under construction from 1:00 AM to 6:00 AM on October 27, 2023.",
                           style: TextStyle(
