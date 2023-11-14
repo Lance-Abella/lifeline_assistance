@@ -27,7 +27,7 @@ class _SplashState extends State<Splash> {
           children: [
             Center(
               child: Container( 
-                margin: EdgeInsets.only(bottom: 130, right: 8),        
+                margin: EdgeInsets.only(bottom: 70, right: 8),        
                 height: 213,
                 width: 230,
                 child: Image(
@@ -38,7 +38,7 @@ class _SplashState extends State<Splash> {
 
           Center(
             child: Container(
-                margin: EdgeInsets.only(top: 80),
+                margin: EdgeInsets.only(top: 140),
                 child: Text(
                   "LIFELINE ASSISTANCE",
                   style: TextStyle(
@@ -53,7 +53,7 @@ class _SplashState extends State<Splash> {
 
             Center(
               child: Container(
-                margin: EdgeInsets.only(top: 120),
+                margin: EdgeInsets.only(top: 180),
                 child: Text(
                   "RAPID, RALIABLE, READY TO RESPOND",
                   style: TextStyle(
