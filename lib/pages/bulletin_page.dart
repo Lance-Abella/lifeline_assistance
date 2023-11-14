@@ -175,11 +175,20 @@ class BulletinPage extends StatelessWidget {
                       ),
 
                       Container(
-                        height: 27,
-                        width: 253,
+                        height: 30,
+                        width: 40,
                         margin: EdgeInsets.only(left: 61, top: 100),
                         child: Image(
                           image: AssetImage("assets/f1.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 6,
+                        width: 26,
+                        margin: EdgeInsets.only(left: 280, top: 110),
+                        child: Image(
+                          image: AssetImage("assets/red-3dots.png"),
                         ),
                       ),
 
@@ -241,11 +250,20 @@ class BulletinPage extends StatelessWidget {
                       ),
 
                       Container(
-                        height: 27,
-                        width: 253,
-                        margin: EdgeInsets.only(left: 61, top: 235),
+                        height: 28,
+                        width: 34,
+                        margin: EdgeInsets.only(left: 62, top: 237),
                         child: Image(
                           image: AssetImage("assets/f2.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 6,
+                        width: 26,
+                        margin: EdgeInsets.only(left: 280, top: 250),
+                        child: Image(
+                          image: AssetImage("assets/red-3dots.png"),
                         ),
                       ),
 
@@ -307,11 +325,20 @@ class BulletinPage extends StatelessWidget {
                       ),
 
                       Container(
-                        height: 27,
-                        width: 253,
-                        margin: EdgeInsets.only(left: 61, top: 385),
+                        height: 28,
+                        width: 34,
+                        margin: EdgeInsets.only(left: 62, top: 388),
                         child: Image(
                           image: AssetImage("assets/f3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 6,
+                        width: 26,
+                        margin: EdgeInsets.only(left: 280, top: 400),
+                        child: Image(
+                          image: AssetImage("assets/red-3dots.png"),
                         ),
                       ),
 
@@ -373,11 +400,20 @@ class BulletinPage extends StatelessWidget {
                       ),
 
                       Container(
-                        height: 27,
-                        width: 253,
-                        margin: EdgeInsets.only(left: 61, top: 525),
+                        height: 28,
+                        width: 34,
+                        margin: EdgeInsets.only(left: 62, top: 528),
                         child: Image(
                           image: AssetImage("assets/f2.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 6,
+                        width: 26,
+                        margin: EdgeInsets.only(left: 280, top: 540),
+                        child: Image(
+                          image: AssetImage("assets/red-3dots.png"),
                         ),
                       ),
 
