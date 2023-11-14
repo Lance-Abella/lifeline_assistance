@@ -54,25 +54,54 @@ class BulletinPage extends StatelessWidget {
                   width: 50,
                   margin: EdgeInsets.only(left: 22, top: 90),
                   child: Image(
-                    image: AssetImage("assets/refresh.png"),
-                    fit: BoxFit.cover,
+                    image: AssetImage("assets/rotate.png"),              
                   ),
                 ),
               ),
+
+              Container(              
+                  margin: EdgeInsets.only(left: 25, top: 130),
+                  child: Text(
+                    "Refresh",
+                    style: TextStyle(
+                      color: Color.fromRGBO(191, 27, 27, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
       
               GestureDetector(
                 onTap: () {
                   
                   _showPostDialog(context);
                 },
-                child: Container(
-                  height: 47,
-                  width: 35,
-                  margin: EdgeInsets.only(left: 305, top: 92),
-                  child: Image(
-                    image: AssetImage("assets/post.png"),
-                    fit: BoxFit.cover,
+                child: Stack(
+                  children: [
+                    Container(
+                    height: 47,
+                    width: 35,
+                    margin: EdgeInsets.only(left: 305, top: 92),
+                    child: Image(
+                      image: AssetImage("assets/new.png"),
+                    ),
                   ),
+               
+
+                    Container(              
+                      margin: EdgeInsets.only(left: 304, top: 130),                  
+                      child: Text(
+                        "Send Ticket",
+                        style: TextStyle(
+                          color: Color.fromRGBO(191, 27, 27, 1),
+                          fontFamily: "IBM Plex Mono",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ]
                 ),
               ),
       

@@ -51,7 +51,11 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onHorizontalDragStart: (details) => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+         onHorizontalDragEnd: (details) {
+          if (details.primaryVelocity! < 0) {            
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => BulletinPage()));
+          }
+        },
         child: Container(
           color: Colors.white,
           child: Stack(

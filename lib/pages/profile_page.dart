@@ -14,7 +14,11 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: GestureDetector(
-        onHorizontalDragEnd: (details) => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+         onHorizontalDragEnd: (details) {
+          if (details.primaryVelocity! > 0) {            
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => SettingsPage()));
+          }  
+        },
         child: Container(
           child: Stack(
             children: [            

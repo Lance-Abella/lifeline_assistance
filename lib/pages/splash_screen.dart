@@ -23,13 +23,49 @@ class _SplashState extends State<Splash> {
       backgroundColor: Colors.white,
       body: Center(
         child: 
-        Container(          
-          height: 190,
-          width: 260,
-          child: Image(
-            image: AssetImage("assets/splash logo.png"),
-            fit: BoxFit.cover,
+        Stack(
+          children: [
+            Center(
+              child: Container( 
+                margin: EdgeInsets.only(bottom: 130, right: 8),        
+                height: 213,
+                width: 230,
+                child: Image(
+                  image: AssetImage("assets/splashlogo.png"),                  
+                ),
+              ),
+            ),
+
+          Center(
+            child: Container(
+                margin: EdgeInsets.only(top: 80),
+                child: Text(
+                  "LIFELINE ASSISTANCE",
+                  style: TextStyle(
+                    color: Color.fromRGBO(191, 27, 27, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 22,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
           ),
+
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(top: 120),
+                child: Text(
+                  "RAPID, RALIABLE, READY TO RESPOND",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize:10,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+          ]
         ),
         ),
     );
