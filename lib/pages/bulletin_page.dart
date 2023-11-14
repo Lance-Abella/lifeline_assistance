@@ -609,7 +609,7 @@ Future<void> _showPostDialog(BuildContext context) async {
               padding: EdgeInsets.all(5),
               child: TextButton(
                 child: Text(
-                  'Post', 
+                  'Send', 
                   style: TextStyle(
                     color: Colors.white,
                   ),
