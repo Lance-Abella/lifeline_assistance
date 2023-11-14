@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable
+// ignore_for_file: prefer_const_constructors, unused_local_variable, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulleting_page2.dart';
@@ -92,29 +92,302 @@ class BulletinPage extends StatelessWidget {
                   ),
                
 
-                    Container(                      
-                      width: 50,             
-                      margin: EdgeInsets.only(left: 303, top: 130),                  
-                      child: Text(
-                        "Send Ticket",
-                        style: TextStyle(
-                          color: Color.fromRGBO(191, 27, 27, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ]
+              Container(                      
+                width: 50,             
+                margin: EdgeInsets.only(left: 303, top: 130),                  
+                child: Text(
+                  "Send Ticket",
+                  style: TextStyle(
+                    color: Color.fromRGBO(191, 27, 27, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ]
+          ),
+        ),
+
+              Container(
+                height: 20,
+                width: 400, 
+                margin: EdgeInsets.only(top: 170),                        
+                child: Image(
+                  image: AssetImage("assets/homepaged3.png"),
                 ),
               ),
       
               Container(
-                color: Colors.red,
+                margin: EdgeInsets.only(top: 180),
+                height: 500,
+                padding: EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 5),
                 child: SingleChildScrollView(
                   child: Stack(
                     children: [
-                      
+                      Container(
+                        height: 53,
+                        width: 59,
+                        margin: EdgeInsets.only(top: 5),
+                        child: Image(
+                          image: AssetImage("assets/basic-profile.png"),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:60, top: 15),
+                        child: Text(
+                          "Anonymous",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:61, top: 35),
+                        child: Text(
+                          "3h",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left: 61, top: 50),
+                        child: Text(
+                          "Offer workshops, seminars, and informational sessions on important issues affecting the community.",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        height: 27,
+                        width: 253,
+                        margin: EdgeInsets.only(left: 61, top: 100),
+                        child: Image(
+                          image: AssetImage("assets/f1.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 20,
+                        width: 400, 
+                        margin: EdgeInsets.only(top: 130),                        
+                        child: Image(
+                          image: AssetImage("assets/homepaged3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 53,
+                        width: 59,
+                        margin: EdgeInsets.only(top: 155),
+                        child: Image(
+                          image: AssetImage("assets/basic-profile.png"),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:60, top: 165),
+                        child: Text(
+                          "Anonymous",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:61, top: 185),
+                        child: Text(
+                          "1w",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left: 61, top: 200),
+                        child: Text(
+                          "Implement recycling programs and encourage waste reduction and sustainability practices.",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        height: 27,
+                        width: 253,
+                        margin: EdgeInsets.only(left: 61, top: 235),
+                        child: Image(
+                          image: AssetImage("assets/f2.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 20,
+                        width: 400, 
+                        margin: EdgeInsets.only(top: 265),                        
+                        child: Image(
+                          image: AssetImage("assets/homepaged3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 53,
+                        width: 59,
+                        margin: EdgeInsets.only(top: 290),
+                        child: Image(
+                          image: AssetImage("assets/basic-profile.png"),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:60, top: 300),
+                        child: Text(
+                          "Anonymous",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:61, top: 320),
+                        child: Text(
+                          "1w",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left: 61, top: 335),
+                        child: Text(
+                          "Develop and share disaster preparedness plans and resources to ensure community resilience.",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        height: 27,
+                        width: 253,
+                        margin: EdgeInsets.only(left: 61, top: 385),
+                        child: Image(
+                          image: AssetImage("assets/f3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 20,
+                        width: 400, 
+                        margin: EdgeInsets.only(top: 415),                        
+                        child: Image(
+                          image: AssetImage("assets/homepaged3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 53,
+                        width: 59,
+                        margin: EdgeInsets.only(top: 440),
+                        child: Image(
+                          image: AssetImage("assets/basic-profile.png"),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:60, top: 450),
+                        child: Text(
+                          "Anonymous",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:61, top: 470),
+                        child: Text(
+                          "2w",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left: 61, top: 490),
+                        child: Text(
+                          "Establish programs and activities to engage and empower the youth within the community.",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        height: 27,
+                        width: 253,
+                        margin: EdgeInsets.only(left: 61, top: 525),
+                        child: Image(
+                          image: AssetImage("assets/f2.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 20,
+                        width: 400, 
+                        margin: EdgeInsets.only(top: 555),                        
+                        child: Image(
+                          image: AssetImage("assets/homepaged3.png"),
+                        ),
+                      ),
                     ] 
                   ),
                 ),
