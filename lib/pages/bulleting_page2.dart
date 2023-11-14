@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 
 class BulletinPage2 extends StatelessWidget {
   const BulletinPage2({super.key});
@@ -313,6 +314,9 @@ class BulletinPage2 extends StatelessWidget {
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
+              onLongPress: () {                  
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LightIndicator()));
+                },
               child: Container(
                 height: 80,
                 width: 80,

@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/notification_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -81,18 +83,21 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              Container(
-                  margin: EdgeInsets.only(left: 70, top: 245),
-                  child: Text(
-                    "Notifications",
-                    style: TextStyle(
-                      color: Color.fromRGBO(88, 83, 83, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
+                child: Container(
+                    margin: EdgeInsets.only(left: 70, top: 245),
+                    child: Text(
+                      "Notifications",
+                      style: TextStyle(
+                        color: Color.fromRGBO(88, 83, 83, 1),
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                ),
+              ),
       
               Container(
                 height: 20,
@@ -359,6 +364,9 @@ class SettingsPage extends StatelessWidget {
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
+                onLongPress: () {                  
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LightIndicator()));
+                },
                 child: Container(
                   height: 80,
                   width: 80,
