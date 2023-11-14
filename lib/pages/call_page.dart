@@ -8,7 +8,6 @@ import 'package:lifeline_assistance/pages/calling3.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
-import 'package:lifeline_assistance/pages/volunteer_registration_page.dart';
 
 class CallPage extends StatelessWidget {
   const CallPage({super.key});
