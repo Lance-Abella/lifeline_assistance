@@ -113,32 +113,18 @@ class _HomepageState extends State<Homepage> {
                   image: AssetImage("assets/homepaged3.png"),
                 ),
               ),
+
+              
       
               Container(
                 // color: Colors.red,
-                margin: EdgeInsets.only(top: 430),
-                height: 253,
-                padding: EdgeInsets.all(5),
+                margin: EdgeInsets.only(top: 470),
+                height: 214,
+                padding: EdgeInsets.only(left:5, right: 5, bottom: 10),
                 child: SingleChildScrollView(
                   
                   child: Stack(
                     children: [
-                
-                      Center(
-                        child: Container(                  
-                          margin: EdgeInsets.only(top: 10),
-                          child: Text(
-                            "Announcements",
-                            style: TextStyle(
-                              color: Color.fromRGBO(88, 83, 83, 1),
-                              fontFamily: "IBM Plex Mono",
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-      
                       Container(
                         height: 53,
                         width: 59,
@@ -308,8 +294,78 @@ class _HomepageState extends State<Homepage> {
                           ),
                         ),
                       ),
+
+                      Container(
+                        height: 20,
+                        width: 400,
+                        margin: EdgeInsets.only(top: 235),
+                        child: Image(
+                          image: AssetImage("assets/homepaged3.png"),
+                        ),
+                      ),
+
+                      Container(
+                        height: 53,
+                        width: 59,
+                        margin: EdgeInsets.only(top: 250),
+                        child: Image(
+                          image: AssetImage("assets/official-profile.png"),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:60, top: 260),
+                        child: Text(
+                          "Talisay Mayor",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left:61, top: 277),
+                        child: Text(
+                          "3w",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+
+                      Container(                  
+                        margin: EdgeInsets.only(left: 72, top: 290),
+                        child: Text(
+                          "Roadblock Alert! Dumlog Street is under construction from 1:00 AM to 6:00 AM on October 27, 2023.",
+                          style: TextStyle(
+                            color: Color.fromRGBO(88, 83, 83, 1),
+                            fontFamily: "IBM Plex Mono",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
                       
                     ]
+                  ),
+                ),
+              ),
+
+              Container(                  
+                margin: EdgeInsets.only(left: 117, top: 440),
+                child: Text(
+                  "Announcements",
+                  style: TextStyle(
+                    color: Color.fromRGBO(88, 83, 83, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
