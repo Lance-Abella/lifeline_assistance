@@ -320,21 +320,21 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 24, top: 730),
-                    child: Text(
-                      "home",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 24, top: 730),
+              //       child: Text(
+              //         "home",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
@@ -349,21 +349,21 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 84, top: 730),
-                    child: Text(
-                      "forum",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 84, top: 730),
+              //       child: Text(
+              //         "forum",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -417,21 +417,21 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 310, top: 730),
-                    child: Text(
-                      "profile",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 310, top: 730),
+              //       child: Text(
+              //         "profile",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),
               
             ],
           ),

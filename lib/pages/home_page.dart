@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:lifeline_assistance/Objects/announcements.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/light_indicator_page.dart';
@@ -20,6 +21,7 @@ class _HomepageState extends State<Homepage> {
   late VideoPlayerController _controller2;
   late VideoPlayerController _controller3;
   late List<VideoPlayerController> videos;
+  bool showText = true;
 
   @override
   void initState() {
@@ -48,6 +50,12 @@ class _HomepageState extends State<Homepage> {
 
     super.dispose();
   }
+
+  Map<String, dynamic> announcement={
+    "profile": ["assets/official-profile.png", "assets/official-profile.png", "assets/official-profile.png"],
+    "name": ["Talisay SK Chairman", "Talisay City Mayor", "Talisay City Mayor"],
+    "message": ["What: Job Fair 2023: Connecting Job Seekers with Opportunities. When: November 7, 2023 (8:00 AM - 3:00 PM) Where: Talisay City Hall", "Emergency Preparedness: Have a Plan, Stay Informed.", "Roadblock Alert! Dumlog Street is under construction from 1:00 AM to 6:00 AM on October 27, 2023."]
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -102,258 +110,27 @@ class _HomepageState extends State<Homepage> {
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
                       fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
-                ),
-                        
+                ),                      
+
               Container(
-                height: 20,
-                width: 400,
-                margin: EdgeInsets.only(top: 420),
-                child: Image(
-                  image: AssetImage("assets/homepaged3.png"),
-                ),
-              ),              
-      
-              Container(                
                 margin: EdgeInsets.only(top: 470),
-                height: 214,
-                padding: EdgeInsets.only(left:5, right: 5, bottom: 15),
-                child: SingleChildScrollView(
+                height: 206,
+                child: ListView.builder(
                   physics: BouncingScrollPhysics(),
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 53,
-                        width: 59,                        
-                        child: Image(
-                          image: AssetImage("assets/official-profile.png"),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:60, top: 10),
-                        child: Text(
-                          "Talisay SK Chairman",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:61, top: 28),
-                        child: Text(
-                          "1w",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left: 71, top: 47),
-                        child: Text(
-                          "What:",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left: 117, top: 47),
-                        child: Text(
-                          "Job Fair 2023 - Connecting Job Seekers with Opportunities.",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:71 , top: 82),
-                        child: Text(
-                          "When:",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left: 119, top: 82),
-                        child: Text(
-                          "November 7, 2023 (8:00 AM - 3:00 PM)",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:71, top: 117),
-                        child: Text(
-                          "Where:",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left: 117, top: 117),
-                        child: Text(
-                          "Talisay City Hall",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-      
-                      Container(
-                        height: 90,
-                        width: 59,
-                        margin: EdgeInsets.only(top: 54),
-                        child: Image(
-                          image: AssetImage("assets/redvline.png"),
-                        ),
-                      ),
-      
-                      Container(
-                        height: 53,
-                        width: 59,
-                        margin: EdgeInsets.only(top: 140),
-                        child: Image(
-                          image: AssetImage("assets/official-profile.png"),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:60, top: 150),
-                        child: Text(
-                          "Talisay Mayor",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left:61, top: 167),
-                        child: Text(
-                          "2w",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-      
-                      Container(                  
-                        margin: EdgeInsets.only(left: 72, top: 187),
-                        child: Text(
-                          "Emergency Preparedness - Have a Plan, Stay Informed.",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
+                  padding: EdgeInsets.zero,
+                  itemCount: announcement["profile"].length,
+                  itemBuilder: (context, index){
+                    return Announcements(
+                      profile: announcement["profile"][index], 
+                      name: announcement["name"][index], 
+                      message: announcement["message"][index],
+                      );
 
-                      Container(
-                        height: 20,
-                        width: 400,
-                        margin: EdgeInsets.only(top: 219),
-                        child: Image(
-                          image: AssetImage("assets/homepaged3.png"),
-                        ),
-                      ),
-
-                      Container(
-                        height: 53,
-                        width: 59,
-                        margin: EdgeInsets.only(top: 230),
-                        child: Image(
-                          image: AssetImage("assets/official-profile.png"),
-                        ),
-                      ),
-
-                      Container(                  
-                        margin: EdgeInsets.only(left:60, top: 240),
-                        child: Text(
-                          "Talisay Mayor",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-
-                      Container(                  
-                        margin: EdgeInsets.only(left:61, top: 257),
-                        child: Text(
-                          "3w",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-
-                      Container(                  
-                        margin: EdgeInsets.only(left: 72, top: 279),
-                        child: Text(
-                          "Roadblock Alert! Dumlog Street is under construction from 1:00 AM to 6:00 AM on October 27, 2023.",
-                          style: TextStyle(
-                            color: Color.fromRGBO(88, 83, 83, 1),
-                            fontFamily: "IBM Plex Mono",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                      
-                    ]
-                  ),
-                ),
-              ),
+                }),
+              ), 
 
               Container(                  
                 margin: EdgeInsets.only(left: 117, top: 440),
@@ -363,14 +140,14 @@ class _HomepageState extends State<Homepage> {
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
                     fontSize: 17,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ),
                   
               Center(
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 160),
+                  margin: EdgeInsets.only(bottom: 145),
                   height: 201,
                   width: 300,
                   decoration: BoxDecoration(
@@ -516,8 +293,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
       
-                GestureDetector(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+                GestureDetector(                 
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),                                          
                   child: Container(
                   height: 41,
                   width: 41,
@@ -526,24 +303,24 @@ class _HomepageState extends State<Homepage> {
                     image: AssetImage("assets/chatbtn.png"),
                     fit: BoxFit.cover,
                   ),
-                            ),
+                  ),
                 ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 84, top: 730),
-                    child: Text(
-                      "forum",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 84, top: 730),
+              //       child: Text(
+              //         "forum",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -574,21 +351,21 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 247, top: 730),
-                    child: Text(
-                      "settings",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 247, top: 730),
+              //       child: Text(
+              //         "settings",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
@@ -603,21 +380,21 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 310, top: 730),
-                    child: Text(
-                      "profile",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),                    
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
+              //   child: Container(
+              //       margin: EdgeInsets.only(left: 310, top: 730),
+              //       child: Text(
+              //         "profile",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(216, 216, 216, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 11,
+              //           fontWeight: FontWeight.w700,
+              //         ),
+              //       ),
+              //     ),
+              // ),                    
             ],
           ),
         ),
