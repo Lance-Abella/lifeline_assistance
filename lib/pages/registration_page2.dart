@@ -1,20 +1,47 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides, no_logic_in_create_state
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/registration_page.dart';
 
 class RegistrationPage2 extends StatefulWidget {
-  const RegistrationPage2({Key? key});
+  const RegistrationPage2({Key? key, required this.emailController, required this.passwordController}) : super(key: key);
+
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
 
   @override
   State<RegistrationPage2> createState() => _RegistrationPage2State();
 }
 
 class _RegistrationPage2State extends State<RegistrationPage2> {
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
   bool isChecked = false;
-  
+
+  @override
+  void initState() {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    emailController .dispose();
+     passwordController .dispose();
+    super.dispose();
+  }
+
+  Future signUp() async {
+  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: widget.emailController.text.trim(),
+    password: widget.passwordController.text.trim(),
+  );
+}
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -293,8 +320,9 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                             actions: [
                               TextButton(
                                 onPressed: () {
+                                  signUp();
                                   Navigator.of(context).pop(); 
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPageEmail()));
                                 },
                                 child: Text(
                                   "OK",
@@ -356,7 +384,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
 
 
               Container(
-                margin: EdgeInsets.only(left: 95, top: 900),
+                margin: EdgeInsets.only(left: 95, top: 870),
                 width: 18,
                 height: 18,
                 decoration: BoxDecoration(
@@ -374,7 +402,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 125, top: 890),
+                margin: EdgeInsets.only(left: 125, top: 860),
                 width: 180,
                 child: Text(
                   "I have agreed to the",
@@ -388,7 +416,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 124, top: 908),
+                margin: EdgeInsets.only(left: 124, top: 878),
                 width: 180,
                 child: Text(
                   "Terms and Conditions",

@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/light_indicator_page.dart';
-import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/notification_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 
@@ -208,7 +209,10 @@ class SettingsPage extends StatelessWidget {
               ),
       
               GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage())),
+                onTap: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPageEmail()));
+                },
                 child: Container(
                   height: 32,
                   width: 32,
@@ -221,7 +225,10 @@ class SettingsPage extends StatelessWidget {
               ),
       
               GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage())),
+                onTap: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPageEmail()));                
+                },
                 child: Container(                
                   height: 35,
                   width: 200,

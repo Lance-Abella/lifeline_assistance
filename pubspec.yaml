@@ -38,6 +38,8 @@ dependencies:
   flutter_carousel_slider: ^1.0.8
   video_player: ^2.7.2
   file_picker: ^5.0.1
+  # firebase_core: ^1.24.0
+  firebase_auth: ^4.14.0
   
   
   

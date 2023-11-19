@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_web_libraries_in_flutter, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/authentication_page.dart';
+import 'package:lifeline_assistance/pages/login_email.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -74,5 +75,5 @@ class _SplashState extends State<Splash> {
 
 Future<void> goToLoginPage(BuildContext context) async {
   await Future.delayed(Duration(milliseconds: 1500), (){});
-  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AuthenticationPage()));
 }

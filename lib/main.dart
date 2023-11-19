@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/splash_screen.dart';
 import 'package:lifeline_assistance/theme/dark_mode.dart';
 import 'package:lifeline_assistance/theme/light_mode.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

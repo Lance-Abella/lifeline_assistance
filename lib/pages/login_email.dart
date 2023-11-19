@@ -1,17 +1,77 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable, library_private_types_in_public_api
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable, library_private_types_in_public_api, prefer_final_fields, use_build_context_synchronously
 
+import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
-import "package:flutter/services.dart";
 import "package:lifeline_assistance/pages/home_page.dart";
+
 import "package:lifeline_assistance/pages/registration_page.dart";
 
-class LoginPage extends StatefulWidget {
+class LoginPageEmail extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPageEmail> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   bool _obscureText = true;
+
+Future<void> signIn() async {
+  try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text.trim(), 
+      password: passwordController.text.trim(),
+      
+    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+  } catch (e) {
+    
+    // print('Authentication error: $e');
+    String errorMessage = 'Authentication failed';
+
+    if (e is FirebaseAuthException) {
+      // Customize error messages based on the error code
+      switch (e.code) {
+        case 'user-not-found':
+          errorMessage = 'No user found with this email.';
+          break;
+        case 'wrong-password':
+          errorMessage = 'Invalid password.';
+          break;
+        // Add more cases as needed
+      }
+    }
+
+    // Show error message to the user (you can use a Snackbar or AlertDialog)
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Center(
+          child: Text(
+            errorMessage, 
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight:FontWeight.w600,
+            ),)),
+        duration: Duration(seconds: 3),
+        behavior: SnackBarBehavior.floating,
+        // margin: EdgeInsets.only( bottom: ),
+        
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+    );
+  }
+}
+
+
+  @override
+  void dispose(){
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 135),
+              margin: EdgeInsets.only(left:200),
               child: Image(
                 image: AssetImage("assets/logind1.png"),
               ),
@@ -37,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 140, top: 220),
+              margin: EdgeInsets.only(left: 148, top: 220),
               child: Text(
                 "LOG IN",
                 style: TextStyle(
@@ -50,31 +110,19 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 40, top: 310),
-              child: Text(
-                "Contact Number:",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-
-            Container(
-              height: 41,
-              width: 280,
-              margin: EdgeInsets.only(left: 40, top: 340),
+              height: 50,
+              width: 290,
+              margin: EdgeInsets.only(left: 39, top: 320),
               child: TextField(
                 style: TextStyle(
                   color: Colors.black,
                 ),
-                keyboardType: TextInputType.number,
-                inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter.digitsOnly,
-                ],
+                controller: emailController,                 
                 decoration: InputDecoration(
+                  hintText: "Email",
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
@@ -82,34 +130,26 @@ class _LoginPageState extends State<LoginPage> {
                     borderSide: BorderSide(color: Colors.black),
                   ),
                   filled: true,
-                  fillColor: Color.fromRGBO(226, 225, 225, 1),
+                  fillColor: Color.fromRGBO(245, 243, 243, 1),
                 ),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 40, top: 400),
-              child: Text(
-                "Password:",
-                style: TextStyle(
-                  color: Color.fromRGBO(88, 83, 83, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-
-            Container(
-              height: 41,
-              width: 280,
-              margin: EdgeInsets.only(left: 40, top: 430),
+              height: 50,
+              width: 290,
+              margin: EdgeInsets.only(left: 39, top: 390),
               child: TextField(
                 style: TextStyle(
                   color: Colors.black,
                 ),
                 obscureText: _obscureText,
+                controller: passwordController,
                 decoration: InputDecoration(
+                  hintText: "Password",
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                  ),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscureText ? Icons.visibility : Icons.visibility_off,
@@ -128,13 +168,13 @@ class _LoginPageState extends State<LoginPage> {
                     borderSide: BorderSide(color: Colors.black),
                   ),
                   filled: true,
-                  fillColor: Color.fromRGBO(226, 225, 225, 1),
+                  fillColor: Color.fromRGBO(245, 243, 243, 1),
                 ),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 190, top: 480),
+              margin: EdgeInsets.only(left: 200, top: 450),
               child: Text(
                 "Forgot Password?",
                 style: TextStyle(
@@ -147,18 +187,21 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
+              onTap: (){
+                signIn();
+                // Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage()));
+                },
               child: Container(
-                margin: EdgeInsets.only(left: 115, top: 525),
-                width: 117,
-                height: 38,
+                margin: EdgeInsets.only(left: 39, top: 500),
+                width: 290,
+                height: 50,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(191, 27, 27, 1),
-                  borderRadius: BorderRadius.circular(10), 
+                  borderRadius: BorderRadius.circular(5), 
                 ),
                 child: Center(
                   child: Text(
-                    "login",
+                    "Sign In",
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontFamily: "IBM Plex Mono",
@@ -171,7 +214,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 93, top: 600),
+              margin: EdgeInsets.only(left: 100, top: 580),
               child: Text(
                 "Don't have an account?",
                 style: TextStyle(
@@ -185,8 +228,9 @@ class _LoginPageState extends State<LoginPage> {
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage())),
-              child: Container(
-                margin: EdgeInsets.only(left: 115, top: 625),
+              child: Container(                
+                margin: EdgeInsets.only(left: 121, top: 610),
+                height: 30,
                 child: Text(
                   "Create an account",
                   style: TextStyle(
@@ -200,7 +244,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 580),              
+              margin: EdgeInsets.only(right: 100, top: 600),              
               child: Image(
                 image: AssetImage("assets/logind3.png"),
               ),

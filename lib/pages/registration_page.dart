@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lifeline_assistance/pages/login_page.dart';
+import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/registration_page2.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -17,6 +17,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
   DateTime selectedDate = DateTime.now();
   bool _obscureText = true;
   String? selectedBloodType;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose(){
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   Future<void> _selectDate(BuildContext context) async {
   DateTime currentDate = selectedDate;
@@ -87,7 +96,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           child: Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 135),
+                margin: EdgeInsets.only(left: 180),
                 child: Image(
                   image: AssetImage("assets/logind1.png"),
                 ),
@@ -102,7 +111,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
               Container(
                 width: 180,
-              margin: EdgeInsets.only(top: 1050),              
+              margin: EdgeInsets.only(top: 1100),              
               child: Image(
                 image: AssetImage("assets/logind3.png"),
               ),
@@ -158,7 +167,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               Container(
                 margin: EdgeInsets.only(left: 40, top: 400),
                 child: Text(
-                  "Middle Name:",
+                  "Last Name:",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -192,13 +201,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
               Container(
                 margin: EdgeInsets.only(left: 40, top: 490),
                 child: Text(
-                  "Last Name:",
+                  "Email:",                
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   ),
+                  
                 ),
               ),
 
@@ -209,7 +219,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ),                 
+                  ),
+                  controller: emailController,              
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -382,6 +393,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     color: Colors.black,
                   ),
                   obscureText: _obscureText,
+                  controller: passwordController,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -540,7 +552,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 height: 38,
                 child: ElevatedButton(                  
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPageEmail()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromRGBO(191, 27, 27, 1), 
@@ -565,10 +577,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 height: 38,
                 child: ElevatedButton(                  
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage2()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage2(emailController: emailController, passwordController: passwordController)));
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(191, 27, 27, 1), 
+                    primary: const Color.fromRGBO(191, 27, 27, 1),  
                     onPrimary: Colors.white, 
                     padding: EdgeInsets.all(5), 
                     shape: RoundedRectangleBorder(
