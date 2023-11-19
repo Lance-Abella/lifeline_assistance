@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:lifeline_assistance/Objects/dialog.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
@@ -391,6 +392,25 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                GestureDetector(
+                  onTap: () => MyDialog.showPostDialog(context), 
+                  child: Container(
+                    height: 60,
+                    width: 60,
+                    margin: EdgeInsets.only(left: 280, top: 600),
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(191, 27, 27, 1),
+                      shape: BoxShape.circle, // Make the container circular
+                    ),
+                    child: Icon(
+                      Icons.edit,
+                      size: 30.0,
+                    ),
+                  ),
+                ),
+
+                
       
       
       

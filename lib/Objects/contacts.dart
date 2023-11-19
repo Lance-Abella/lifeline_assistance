@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/calling1.dart';
+import 'package:lifeline_assistance/pages/calling.dart';
 
 class Contact extends StatelessWidget {
   final String name;
@@ -51,7 +51,7 @@ class Contact extends StatelessWidget {
         ),
 
         GestureDetector(
-        onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling1())),
+        onLongPress: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Calling(name: name))),
         child: Container(              
           height: 70,
           width: 300,

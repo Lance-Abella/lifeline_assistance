@@ -1,11 +1,8 @@
-// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals
+// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/Objects/contacts.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
-import 'package:lifeline_assistance/pages/calling1.dart';
-import 'package:lifeline_assistance/pages/calling2.dart';
-import 'package:lifeline_assistance/pages/calling3.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
