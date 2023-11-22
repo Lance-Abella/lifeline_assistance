@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
             children: [            
               Container(
                 height: 1000,
-                width: 500,
+                width: 501,
                 margin: EdgeInsets.only(bottom: 480),
                 decoration: BoxDecoration(
                   image: DecorationImage(
