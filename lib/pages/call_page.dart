@@ -71,7 +71,7 @@ class CallPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 24,
+                      fontSize: 19,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

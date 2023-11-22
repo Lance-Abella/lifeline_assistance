@@ -24,20 +24,20 @@ class Announcements extends StatelessWidget {
         ),
 
         Container(                  
-          margin: EdgeInsets.only(left:60, top: 20),
+          margin: EdgeInsets.only(left:70, top: 20),
           child: Text(
             name,
             style: TextStyle(
               color: Color.fromRGBO(88, 83, 83, 1),
               fontFamily: "IBM Plex Mono",
-              fontSize: 15,
+              fontSize: 14,
               fontWeight: FontWeight.w700,
             ),
           ),
         ),
 
         Container(                  
-          margin: EdgeInsets.only(left:61, top: 38),
+          margin: EdgeInsets.only(left:71, top: 38),
           child: Text(
             "1w",
             style: TextStyle(
@@ -50,7 +50,7 @@ class Announcements extends StatelessWidget {
         ),
 
         Container(                  
-          margin: EdgeInsets.only(left: 71, top: 55),
+          margin: EdgeInsets.only(left: 71, top: 62),
           child: Text(
             message,
             style: TextStyle(

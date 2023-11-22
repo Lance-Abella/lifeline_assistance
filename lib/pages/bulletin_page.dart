@@ -102,39 +102,39 @@ class BulletinPage extends StatelessWidget {
         //           ),
         //       ),
       
-        //       GestureDetector(
-        //         onTap: () {
+              GestureDetector(
+                onTap: () {
                   
-        //           _showPostDialog(context);
-        //         },
-        //         child: Stack(
-        //           children: [
-        //             Container(
-        //             height: 47,
-        //             width: 35,
-        //             margin: EdgeInsets.only(left: 305, top: 92),
-        //             child: Image(
-        //               image: AssetImage("assets/new.png"),
-        //             ),
-        //           ),
+                  _showPostDialog(context);
+                },
+                child: Stack(
+                  children: [
+                    Container(
+                    height: 47,
+                    width: 35,
+                    margin: EdgeInsets.only(left: 305, top: 90),
+                    child: Image(
+                      image: AssetImage("assets/new.png"),
+                    ),
+                  ),
                
 
-        //       Container(                      
-        //         width: 50,             
-        //         margin: EdgeInsets.only(left: 303, top: 130),                  
-        //         child: Text(
-        //           "Send Ticket",
-        //           style: TextStyle(
-        //             color: Color.fromRGBO(191, 27, 27, 1),
-        //             fontFamily: "IBM Plex Mono",
-        //             fontSize: 14,
-        //             fontWeight: FontWeight.w600,
-        //           ),
-        //         ),
-        //       ),
-        //     ]
-        //   ),
-        // ),
+              Container(                      
+                width: 50,             
+                margin: EdgeInsets.only(left: 305, top: 130),                  
+                child: Text(
+                  "Send Ticket",
+                  style: TextStyle(
+                    color: Color.fromRGBO(191, 27, 27, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ]
+          ),
+        ),
 
         //       Container(
         //         height: 20,
@@ -618,7 +618,7 @@ Future<void> _showPostDialog(BuildContext context) async {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('What\'s on your mind?'),
+          title: Text('Express your concerns'),
           content: TextField(
             onChanged: (text) {
               userInput = text;

@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable, library_private_types_in_public_api, prefer_final_fields, use_build_context_synchronously
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable, library_private_types_in_public_api, prefer_final_fields, use_build_context_synchronously, prefer_relative_imports
 
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:lifeline_assistance/pages/home_page.dart";
-
 import "package:lifeline_assistance/pages/registration_page.dart";
 
 class LoginPageEmail extends StatefulWidget {
@@ -25,12 +24,10 @@ Future<void> signIn() async {
     );
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
   } catch (e) {
-    
-    // print('Authentication error: $e');
+
     String errorMessage = 'Authentication failed';
 
     if (e is FirebaseAuthException) {
-      // Customize error messages based on the error code
       switch (e.code) {
         case 'user-not-found':
           errorMessage = 'No user found with this email.';
@@ -38,11 +35,9 @@ Future<void> signIn() async {
         case 'wrong-password':
           errorMessage = 'Invalid password.';
           break;
-        // Add more cases as needed
       }
     }
 
-    // Show error message to the user (you can use a Snackbar or AlertDialog)
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Center(
@@ -54,8 +49,6 @@ Future<void> signIn() async {
             ),)),
         duration: Duration(seconds: 3),
         behavior: SnackBarBehavior.floating,
-        // margin: EdgeInsets.only( bottom: ),
-        
 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -97,7 +90,7 @@ Future<void> signIn() async {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 148, top: 220),
+              margin: EdgeInsets.only(left: 148, top: 215),
               child: Text(
                 "LOG IN",
                 style: TextStyle(
@@ -180,7 +173,7 @@ Future<void> signIn() async {
                 style: TextStyle(
                   color: Color.fromRGBO(88, 83, 83, 1),
                   fontFamily: "IBM Plex Mono",
-                  fontSize: 14,
+                  fontSize: 13,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -214,7 +207,7 @@ Future<void> signIn() async {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 100, top: 580),
+              margin: EdgeInsets.only(left: 80, top: 590),
               child: Text(
                 "Don't have an account?",
                 style: TextStyle(
@@ -229,7 +222,7 @@ Future<void> signIn() async {
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage())),
               child: Container(                
-                margin: EdgeInsets.only(left: 121, top: 610),
+                margin: EdgeInsets.only(left: 110, top: 620),
                 height: 30,
                 child: Text(
                   "Create an account",

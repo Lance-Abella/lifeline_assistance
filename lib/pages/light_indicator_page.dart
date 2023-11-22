@@ -12,51 +12,61 @@ class LightIndicator extends StatelessWidget {
       body: Container(        
         child: Stack(
           children: [
-            Container(
-              height: 900,
-              width: 400,
-              margin: EdgeInsets.only(right: 7, bottom: 500),
-              child: Image(
-                image: AssetImage("assets/homepaged2.png"),
+            Center(
+              child: Container(
+                height: 900,
+                width: 400,
+                margin: EdgeInsets.only(bottom: 500),
+                child: Image(
+                  image: AssetImage("assets/homepaged2.png"),
+                ),
               ),
             ),
 
-            Container(
-                margin: EdgeInsets.only(left: 53, top: 180),
+            Center(
+              child: Container(
+                  margin: EdgeInsets.only(bottom: 350),
+                  child: Text(
+                    "Emergency Responders",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+            ),
+
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 290),
                 child: Text(
-                  "Emergency Responders",
+                  "40 meters away",
                   style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
+                    color: Color.fromRGBO(216, 216, 216, 1),
                     fontFamily: "IBM Plex Mono",
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-
-            Container(
-              margin: EdgeInsets.only(left: 122, top: 210),
-              child: Text(
-                "40 meters away",
-                style: TextStyle(
-                  color: Color.fromRGBO(216, 216, 216, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
             ),
 
-            Container(
-              margin: EdgeInsets.only(left: 90, top: 240),
-              child: Text(
-                "Kindly stay calm and silent. Responders are on their way",
-                style: TextStyle(
-                  color: Color.fromRGBO(216, 216, 216, 1),
-                  fontFamily: "IBM Plex Mono",
-                  fontSize: 17,
-                  fontWeight: FontWeight.w200,
-                  fontStyle: FontStyle.italic,
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 170),
+                child: Text(
+                  "Kindly stay calm and silent. Responders are on their way",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color.fromRGBO(216, 216, 216, 1),
+                    fontFamily: "IBM Plex Mono",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w200,
+                    fontStyle: FontStyle.italic,
+                    
+                  ),
                 ),
               ),
             ),

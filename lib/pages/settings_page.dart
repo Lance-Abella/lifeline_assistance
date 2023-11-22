@@ -53,13 +53,13 @@ class SettingsPage extends StatelessWidget {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 137, top: 160),
+                  margin: EdgeInsets.only(left: 125, top: 160),
                   child: Text(
                     "Settings",
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -87,21 +87,18 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 70, top: 245),
-                    child: Text(
-                      "Notifications",
-                      style: TextStyle(
-                        color: Color.fromRGBO(88, 83, 83, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                      ),
+              Container(
+                  margin: EdgeInsets.only(left: 70, top: 245),
+                  child: Text(
+                    "Notifications",
+                    style: TextStyle(
+                      color: Color.fromRGBO(88, 83, 83, 1),
+                      fontFamily: "IBM Plex Mono",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-              ),
+                ),
       
               Container(
                 height: 20,
@@ -129,8 +126,8 @@ class SettingsPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -161,8 +158,8 @@ class SettingsPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -193,8 +190,8 @@ class SettingsPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -238,8 +235,8 @@ class SettingsPage extends StatelessWidget {
                       style: TextStyle(
                         color: Color.fromRGBO(88, 83, 83, 1),
                         fontFamily: "IBM Plex Mono",
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -271,8 +268,8 @@ class SettingsPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -399,7 +396,7 @@ class SettingsPage extends StatelessWidget {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 247, top: 730),
+                  margin: EdgeInsets.only(left: 240, top: 730),
                   child: Text(
                     "settings",
                     style: TextStyle(

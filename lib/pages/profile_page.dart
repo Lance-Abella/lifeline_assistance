@@ -52,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -71,26 +71,26 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 110, top: 350),
+                  margin: EdgeInsets.only(left: 100, top: 350),
                   child: Text(
                     "Lance Mathew Abella",
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
+                      fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 60, top: 400),
+                margin: EdgeInsets.only(left: 20, top: 400),
                 child: Text(
                   "Date of Birth:",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
-                    fontSize: 17,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -103,14 +103,14 @@ class ProfilePage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
-                      fontSize: 17,
+                      fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 128, top: 430),
+                margin: EdgeInsets.only(left: 20, top: 430),
                 child: Text(
                   "Sex:",
                   style: TextStyle(
@@ -136,9 +136,9 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 30, top: 460),
+                margin: EdgeInsets.only(left: 20, top: 460),
                 child: Text(
-                  "Contact Number:",
+                  "Contact No.:",
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
@@ -162,7 +162,7 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 68, top: 490),
+                margin: EdgeInsets.only(left: 20, top: 490),
                 child: Text(
                   "Occupation:",
                   style: TextStyle(
@@ -188,7 +188,7 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 92, top: 520),
+                margin: EdgeInsets.only(left: 20, top: 520),
                 child: Text(
                   "Address:",
                   style: TextStyle(
@@ -214,7 +214,7 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 70, top: 550),
+                margin: EdgeInsets.only(left: 20, top: 570),
                 child: Text(
                   "Blood Type:",
                   style: TextStyle(
@@ -227,7 +227,7 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 550),
+                  margin: EdgeInsets.only(left: 170, top: 570),
                   child: Text(
                     "B+",
                     style: TextStyle(
@@ -381,7 +381,7 @@ class ProfilePage extends StatelessWidget {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 310, top: 730),
+                  margin: EdgeInsets.only(left: 305, top: 730),
                   child: Text(
                     "profile",
                     style: TextStyle(

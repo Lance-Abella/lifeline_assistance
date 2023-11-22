@@ -22,7 +22,7 @@ class Contact extends StatelessWidget {
             style: TextStyle(
               color: Color.fromRGBO(88, 83, 83, 1),
               fontFamily: "IBM Plex Mono",
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -35,7 +35,7 @@ class Contact extends StatelessWidget {
             style: TextStyle(
               color: Color.fromRGBO(88, 83, 83, 1),
               fontFamily: "IBM Plex Mono",
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -44,7 +44,7 @@ class Contact extends StatelessWidget {
         Container(
           height: 28,
           width: 36,
-          margin: EdgeInsets.only(left: 200, top: 60),
+          margin: EdgeInsets.only(left: 190, top: 65),
           child: Image(
             image: AssetImage(badge),
           ),
@@ -61,7 +61,7 @@ class Contact extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromRGBO(88, 83, 83, 1),
                 fontFamily: "IBM Plex Mono",
-                fontSize: 17,
+                fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
             ),

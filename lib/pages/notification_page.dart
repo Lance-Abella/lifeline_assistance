@@ -8,8 +8,18 @@ import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
 
+import '../Objects/notifs.dart';
+
 class Notif extends StatelessWidget {
-  const Notif({super.key});
+  Notif({super.key});
+
+   Map<String, dynamic> notification={
+    
+    "image": ["assets/like.png", "assets/megaphone.png", "assets/megaphone.png", "assets/megaphone.png", "assets/like.png", "assets/warning.png"],
+    "title": ["Your ticket has been approved!", "New announcement!", "New announcement!", "New announcement!", "Your ticket has been approved!", "new daily tip has been posted!" ],
+    "message": ["Develop and share disaster preparedness plans and resources...", "Emergency Preparedness: Have a Plan, Stay Informed.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...", "Quis auctor elit sed vulputate mi sit amet. Eget lorem dolor sed viverra...", "Venenatis lectus magna fringilla urna porttitor. Semper auctor neque...", "click to view the post."],
+    "duration": ["24 mins ago", "1 hr ago", "2 hr ago", "2 hr ago", "5 hr ago", "1 d ago"],
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -134,304 +144,326 @@ class Notif extends StatelessWidget {
               ),
 
               Container(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                margin: EdgeInsets.only(top: 190),
-                height: 490,
-                child: SingleChildScrollView(
+                margin: EdgeInsets.only(top: 200),
+                height: 475,
+                child: ListView.builder(
                   physics: BouncingScrollPhysics(),
-                  child: Stack(
-                    children: [
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 5),                       
-                      child: Image(
-                        image: AssetImage("assets/like.png"),
-                      ),
-                    ),
+                  padding: EdgeInsets.zero,
+                  itemCount: notification["image"].length,
+                  itemBuilder: (context, index){
+                    return Notifs(
+                      image: notification["image"][index], 
+                      title: notification["title"][index], 
+                      message: notification["message"][index],
+                      duration: notification["duration"][index],
+                      );
+
+                }),
+              ), 
+
+
+
+
+
+              // Container(
+              //   padding: EdgeInsets.only(top: 10, bottom: 10),
+              //   margin: EdgeInsets.only(top: 190),
+              //   height: 490,
+              //   child: SingleChildScrollView(
+              //     physics: BouncingScrollPhysics(),
+              //     child: Stack(
+              //       children: [
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 5),                       
+              //         child: Image(
+              //           image: AssetImage("assets/like.png"),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 5),
-                      child: Text(
-                        "Your ticket has been approved!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 5),
+              //         child: Text(
+              //           "Your ticket has been approved!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 25),
-                      child: Text(
-                        "Develop and share disaster preparedness plans and resources...",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 25),
+              //         child: Text(
+              //           "Develop and share disaster preparedness plans and resources...",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 60),
-                      child: Text(
-                        "24 mins ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 60),
+              //         child: Text(
+              //           "24 mins ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 90),                       
-                      child: Image(
-                        image: AssetImage("assets/megaphone.png"),
-                      ),
-                    ),
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 90),                       
+              //         child: Image(
+              //           image: AssetImage("assets/megaphone.png"),
+              //         ),
+              //       ),
                     
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 90),
-                      child: Text(
-                        "Government official has a new post!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 90),
+              //         child: Text(
+              //           "Government official has a new post!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 110),
-                      child: Text(
-                        "Emergency preparedness: Have a Plan, Stay Informed.",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 110),
+              //         child: Text(
+              //           "Emergency preparedness: Have a Plan, Stay Informed.",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 145),
-                      child: Text(
-                        "1 hr ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 145),
+              //         child: Text(
+              //           "1 hr ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 175),                       
-                      child: Image(
-                        image: AssetImage("assets/megaphone.png"),
-                      ),
-                    ),
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 175),                       
+              //         child: Image(
+              //           image: AssetImage("assets/megaphone.png"),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 175),
-                      child: Text(
-                        "Government official has a new post!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 175),
+              //         child: Text(
+              //           "Government official has a new post!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 195),
-                      child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 195),
+              //         child: Text(
+              //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 230),
-                      child: Text(
-                        "2 hr ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 230),
+              //         child: Text(
+              //           "2 hr ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 260),                       
-                      child: Image(
-                        image: AssetImage("assets/megaphone.png"),
-                      ),
-                    ),
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 260),                       
+              //         child: Image(
+              //           image: AssetImage("assets/megaphone.png"),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 260),
-                      child: Text(
-                        "Government official has a new post!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 260),
+              //         child: Text(
+              //           "Government official has a new post!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 280),
-                      child: Text(
-                        "Quis auctor elit sed vulputate mi sit amet. Eget lorem dolor sed viverra...",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 280),
+              //         child: Text(
+              //           "Quis auctor elit sed vulputate mi sit amet. Eget lorem dolor sed viverra...",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 315),
-                      child: Text(
-                        "2 hr ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 315),
+              //         child: Text(
+              //           "2 hr ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
               
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 345),                       
-                      child: Image(
-                        image: AssetImage("assets/like.png"),
-                      ),
-                    ),
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 345),                       
+              //         child: Image(
+              //           image: AssetImage("assets/like.png"),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 345),
-                      child: Text(
-                        "Your ticket has been approved!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 345),
+              //         child: Text(
+              //           "Your ticket has been approved!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 365),
-                      child: Text(
-                        "Venenatis lectus magna fringilla urna porttitor. Semper auctor neque...",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 365),
+              //         child: Text(
+              //           "Venenatis lectus magna fringilla urna porttitor. Semper auctor neque...",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 400),
-                      child: Text(
-                        "3 hrs ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 400),
+              //         child: Text(
+              //           "3 hrs ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
               
-                    Container(
-                      height: 55,
-                      width: 55, 
-                      margin: EdgeInsets.only(left: 20, top: 430),                       
-                      child: Image(
-                        image: AssetImage("assets/warning.png"),
-                      ),
-                    ),
+              //       Container(
+              //         height: 55,
+              //         width: 55, 
+              //         margin: EdgeInsets.only(left: 20, top: 430),                       
+              //         child: Image(
+              //           image: AssetImage("assets/warning.png"),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 430),
-                      child: Text(
-                        "New Weekly tip has been posted!",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 430),
+              //         child: Text(
+              //           "New Weekly tip has been posted!",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 15,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left: 90, top: 450),
-                      child: Text(
-                        "Click to view the post.",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 1),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left: 90, top: 450),
+              //         child: Text(
+              //           "Click to view the post.",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 1),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
                   
-                    Container(                  
-                      margin: EdgeInsets.only(left:90, top: 468),
-                      child: Text(
-                        "1d ago",
-                        style: TextStyle(
-                          color: Color.fromRGBO(88, 83, 83, 0.58),
-                          fontFamily: "IBM Plex Mono",
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    ]
-                  ),
-                ),
-              ),
+              //       Container(                  
+              //         margin: EdgeInsets.only(left:90, top: 468),
+              //         child: Text(
+              //           "1d ago",
+              //           style: TextStyle(
+              //             color: Color.fromRGBO(88, 83, 83, 0.58),
+              //             fontFamily: "IBM Plex Mono",
+              //             fontSize: 11,
+              //             fontWeight: FontWeight.w400,
+              //           ),
+              //         ),
+              //       ),
+              //       ]
+              //     ),
+              //   ),
+              // ),
 
               Container(
                 height: 20,

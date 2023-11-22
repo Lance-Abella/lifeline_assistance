@@ -103,7 +103,7 @@ class _HomepageState extends State<Homepage> {
               ),
       
               Container(              
-                  margin: EdgeInsets.only(left: 135, top: 170),
+                  margin: EdgeInsets.only(left: 130, top: 170),
                   child: Text(
                     "Weekly Tips",
                     style: TextStyle(
@@ -201,7 +201,7 @@ class _HomepageState extends State<Homepage> {
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
                 child: Container(                      
                   width: 50,             
-                  margin: EdgeInsets.only(left: 305, top: 130),                  
+                  margin: EdgeInsets.only(left: 302, top: 130),                  
                   child: Text(
                     "Notif",
                     style: TextStyle(
@@ -214,33 +214,33 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
 
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  margin: EdgeInsets.only(left: 22, top: 90),
-                  child: Image(
-                    image: AssetImage("assets/rotate.png"),              
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
+              //   child: Container(
+              //     height: 50,
+              //     width: 50,
+              //     margin: EdgeInsets.only(left: 22, top: 90),
+              //     child: Image(
+              //       image: AssetImage("assets/rotate.png"),              
+              //     ),
+              //   ),
+              // ),
 
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
-                child: Container(              
-                    margin: EdgeInsets.only(left: 25, top: 130),
-                    child: Text(
-                      "Refresh",
-                      style: TextStyle(
-                        color: Color.fromRGBO(191, 27, 27, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
+              //   child: Container(              
+              //       margin: EdgeInsets.only(left: 25, top: 130),
+              //       child: Text(
+              //         "Refresh",
+              //         style: TextStyle(
+              //           color: Color.fromRGBO(191, 27, 27, 1),
+              //           fontFamily: "IBM Plex Mono",
+              //           fontSize: 14,
+              //           fontWeight: FontWeight.w600,
+              //         ),
+              //       ),
+              //     ),
+              // ),
       
               Container(
                 height: 20,
