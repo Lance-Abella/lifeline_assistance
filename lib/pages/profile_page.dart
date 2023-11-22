@@ -22,6 +22,7 @@ class ProfilePage extends StatelessWidget {
           }  
         },
         child: Container(
+          color: Colors.white,
           child: Stack(
             children: [            
               Container(
