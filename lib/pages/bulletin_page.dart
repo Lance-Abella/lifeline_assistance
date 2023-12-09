@@ -107,33 +107,14 @@ class BulletinPage extends StatelessWidget {
                   
                   _showPostDialog(context);
                 },
-                child: Stack(
-                  children: [
-                    Container(
-                    height: 47,
-                    width: 35,
-                    margin: EdgeInsets.only(left: 305, top: 90),
-                    child: Image(
-                      image: AssetImage("assets/new.png"),
-                    ),
-                  ),
-               
-
-              Container(                      
-                width: 50,             
-                margin: EdgeInsets.only(left: 305, top: 130),                  
-                child: Text(
-                  "Send Ticket",
-                  style: TextStyle(
-                    color: Color.fromRGBO(191, 27, 27, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                  ),
+                child: Container(
+                height: 47,
+                width: 35,
+                margin: EdgeInsets.only(left: 305, top: 90),
+                child: Image(
+                  image: AssetImage("assets/new.png"),
                 ),
-              ),
-            ]
-          ),
+                  ),
         ),
 
         //       Container(

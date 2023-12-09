@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals, must_be_immutable
+// ignore_for_file: prefer_const_constructors, unused_field, prefer_collection_literals, must_be_immutable, prefer_relative_imports
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/Objects/contacts.dart';

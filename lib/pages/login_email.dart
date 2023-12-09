@@ -5,6 +5,8 @@ import "package:flutter/material.dart";
 import "package:lifeline_assistance/pages/home_page.dart";
 import "package:lifeline_assistance/pages/registration_page.dart";
 
+import "call_page.dart";
+
 class LoginPageEmail extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -22,7 +24,7 @@ Future<void> signIn() async {
       password: passwordController.text.trim(),
       
     );
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CallPage()));
   } catch (e) {
 
     String errorMessage = 'Authentication failed';
@@ -145,7 +147,7 @@ Future<void> signIn() async {
                   ),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _obscureText ? Icons.visibility : Icons.visibility_off,
+                      _obscureText ? Icons.visibility_off : Icons.visibility,
                     ),
                     color: Colors.black,
                     onPressed: () {

@@ -1,6 +1,8 @@
+// ignore_for_file: prefer_relative_imports
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lifeline_assistance/pages/home_page.dart';
+import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/login_email.dart';
 
 class AuthenticationPage extends StatelessWidget {
@@ -13,7 +15,7 @@ class AuthenticationPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(), 
         builder: (context, snapshot){
           if(snapshot.hasData){
-            return Homepage();
+            return CallPage();
           }
           else{
             return LoginPageEmail();

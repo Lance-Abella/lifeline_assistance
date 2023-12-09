@@ -113,7 +113,7 @@ class _HomepageState extends State<Homepage> {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
-                ),                      
+                ),
 
               Container(
                 margin: EdgeInsets.only(top: 470),
@@ -197,22 +197,22 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
 
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
-                child: Container(                      
-                  width: 50,             
-                  margin: EdgeInsets.only(left: 302, top: 130),                  
-                  child: Text(
-                    "Notif",
-                    style: TextStyle(
-                      color: Color.fromRGBO(191, 27, 27, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
+              //   child: Container(                      
+              //     width: 50,             
+              //     margin: EdgeInsets.only(left: 302, top: 130),                  
+              //     child: Text(
+              //       "Notif",
+              //       style: TextStyle(
+              //         color: Color.fromRGBO(191, 27, 27, 1),
+              //         fontFamily: "IBM Plex Mono",
+              //         fontSize: 14,
+              //         fontWeight: FontWeight.w600,
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
               // GestureDetector(
               //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
