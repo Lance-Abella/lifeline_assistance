@@ -6,24 +6,34 @@ import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/registration_page2.dart';
 
 class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
-
+  const RegistrationPage({Key? key}) : super(key: key);
+  
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  final firstnameController = TextEditingController();
+  final lastnameController = TextEditingController();
+  final emailController = TextEditingController();
   String? gender;
   DateTime selectedDate = DateTime.now();
-  bool _obscureText = true;
-  String? selectedBloodType;
-  final emailController = TextEditingController();
+  final numberController = TextEditingController();
   final passwordController = TextEditingController();
+  final addressController = TextEditingController();
+  final occupationController = TextEditingController();
+  String? selectedBloodType;
+  bool _obscureText = true;
 
-  @override
+  @override 
   void dispose(){
+    firstnameController.dispose();
+    lastnameController.dispose();
     emailController.dispose();
+    numberController.dispose();
     passwordController.dispose();
+    addressController.dispose();
+    occupationController.dispose();
     super.dispose();
   }
 
@@ -150,7 +160,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ),                
+                  ), 
+                  controller: firstnameController,                
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -184,7 +195,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ),                  
+                  ),
+                  controller: lastnameController,                   
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -354,6 +366,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 style: TextStyle(
                   color: Colors.black,
                 ),
+                controller: numberController, 
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
@@ -397,7 +410,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        _obscureText ? Icons.visibility_off : Icons.visibility,
                       ),
                       color: Colors.black,
                       onPressed: () {
@@ -438,7 +451,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ), 
+                  ),
+                  controller: addressController,  
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -472,7 +486,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: TextField(
                   style: TextStyle(
                     color: Colors.black,
-                  ),                  
+                  ), 
+                  controller: occupationController,                  
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -577,7 +592,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 height: 38,
                 child: ElevatedButton(                  
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage2(emailController: emailController, passwordController: passwordController)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>RegistrationPage2(emailController: emailController, passwordController: passwordController, firstnameController: firstnameController, lastnameController: lastnameController, gender: gender, selectedDate: selectedDate, numberController: numberController, addressController: addressController, occupationController: occupationController, selectedBloodType: selectedBloodType,)));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromRGBO(191, 27, 27, 1),  

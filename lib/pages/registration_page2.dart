@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides, no_logic_in_create_state, prefer_relative_imports
+  // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides, no_logic_in_create_state, prefer_relative_imports
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,39 +8,142 @@ import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/registration_page.dart';
 
 class RegistrationPage2 extends StatefulWidget {
-  const RegistrationPage2({Key? key, required this.emailController, required this.passwordController}) : super(key: key);
-
+  final TextEditingController firstnameController;
+  final TextEditingController lastnameController;
   final TextEditingController emailController;
+  final String? gender;
+  final DateTime selectedDate;
+  final TextEditingController numberController;
   final TextEditingController passwordController;
+  final TextEditingController addressController;
+  final TextEditingController occupationController;
+  final String? selectedBloodType;
+  
+  const RegistrationPage2({
+    Key? key, 
+    required this.emailController, 
+    required this.passwordController, 
+    required this.firstnameController, 
+    required this.lastnameController, 
+    required this.gender, 
+    required this.selectedDate, 
+    required this.numberController, 
+    required this.addressController, 
+    required this.occupationController, 
+    required this.selectedBloodType}) : super(key: key);
 
   @override
   State<RegistrationPage2> createState() => _RegistrationPage2State();
 }
 
 class _RegistrationPage2State extends State<RegistrationPage2> {
+  //User's trusted person
+  final _firstnameController = TextEditingController();
+  final _middlenameController = TextEditingController();
+  final _lastnameController = TextEditingController();
+  final _numberController = TextEditingController();
+  final _relationController = TextEditingController();
+
+  //User details
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  late TextEditingController firstnameController;
+  late TextEditingController lastnameController;
+  late String? gender;
+  late DateTime selectedDate;
+  late TextEditingController numberController;
+  late TextEditingController addressController;
+  late TextEditingController occupationController;
+  late String? selectedBloodType;
   bool isChecked = false;
 
   @override
   void initState() {
     super.initState();
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
+    emailController = widget.emailController;
+    passwordController = widget.passwordController;
+    firstnameController = widget.firstnameController;
+    lastnameController = widget.lastnameController;
+    gender = widget.gender;
+    selectedDate = widget.selectedDate;
+    numberController = widget.numberController;
+    addressController = widget.addressController;
+    occupationController = widget.occupationController;
+    selectedBloodType = widget.selectedBloodType;
   }
 
   @override
   void dispose() {
-    emailController .dispose();
-     passwordController .dispose();
+    //User's trusted person
+    _firstnameController.dispose();
+    _middlenameController.dispose();
+    _lastnameController.dispose();
+    _numberController.dispose();
+    _relationController.dispose();
+
+    //User
+    firstnameController.dispose();
+    lastnameController.dispose();
+    emailController.dispose();
+    numberController.dispose();
+    passwordController.dispose();
+    addressController.dispose();
+    occupationController.dispose();
     super.dispose();
   }
 
   Future signUp() async {
-  await FirebaseAuth.instance.createUserWithEmailAndPassword(
-    email: widget.emailController.text.trim(),
-    password: widget.passwordController.text.trim(),
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
   );
+
+  String formattedDate = selectedDate.toLocal().toString();
+
+    addUserDetails(
+      //User details
+      firstnameController.text.trim(), 
+      lastnameController.text.trim(), 
+      emailController.text.trim(), 
+      gender!, 
+      formattedDate, 
+      int.parse(numberController.text.trim()), 
+      passwordController.text.trim(), 
+      addressController.text.trim(), 
+      occupationController.text.trim(), 
+      selectedBloodType as String,
+      
+      //User's trusted person
+      _firstnameController.text.trim(),
+      _middlenameController.text.trim(),
+      _lastnameController.text.trim(),
+      int.parse(_numberController.text.trim()),
+      _relationController.text.trim()
+      );
+
+}
+
+  Future addUserDetails(String firstname, String lastname, String email, String gender, String dateofbirth, int number, String password, String address, String occupation, String bloodtype, String trustedfn, String trustedmn, String trustedln, int trustednum, String trustedrel) async{
+  await FirebaseFirestore.instance.collection("users").add({
+    //User details
+    "firstname": firstname,
+    "lastname": lastname,
+    "email": email,
+    "gender": gender,
+    "dateofbirth": dateofbirth,
+    "number": number,
+    "password": password,
+    "address": address,
+    "occupation": occupation,
+    "bloodtype": bloodtype,
+
+    //User's trusted details
+    "trustedfn": trustedfn,
+    "trustedmn": trustedmn,
+    "trustedln": trustedln,
+    "trustednum": trustednum,
+    "trustedrel": trustedrel
+  });
 }
 
   Widget build(BuildContext context) {
@@ -121,6 +225,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  controller: _firstnameController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -155,6 +260,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  controller: _middlenameController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -189,6 +295,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  controller: _lastnameController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -223,6 +330,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  controller: _numberController,
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.digitsOnly,
@@ -261,6 +369,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  controller: _relationController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
