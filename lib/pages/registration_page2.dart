@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides, no_logic_in_create_state
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, annotate_overrides, no_logic_in_create_state, prefer_relative_imports
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

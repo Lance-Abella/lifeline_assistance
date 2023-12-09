@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_web_libraries_in_flutter, use_build_context_synchronously
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_web_libraries_in_flutter, use_build_context_synchronously, prefer_relative_imports
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/authentication_page.dart';
-import 'package:lifeline_assistance/pages/login_email.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

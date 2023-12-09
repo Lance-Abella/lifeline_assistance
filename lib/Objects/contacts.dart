@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_relative_imports, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/calling.dart';

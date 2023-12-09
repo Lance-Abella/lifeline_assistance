@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_element, unused_local_variable
+// ignore_for_file: prefer_const_constructors, unused_element, unused_local_variable, prefer_relative_imports
 
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';

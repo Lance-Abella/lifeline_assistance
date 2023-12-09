@@ -2,7 +2,6 @@
 
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
-import "package:lifeline_assistance/pages/home_page.dart";
 import "package:lifeline_assistance/pages/registration_page.dart";
 
 import "call_page.dart";

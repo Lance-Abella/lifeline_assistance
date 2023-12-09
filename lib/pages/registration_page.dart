@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unused_element, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unused_element, deprecated_member_use, prefer_relative_imports
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

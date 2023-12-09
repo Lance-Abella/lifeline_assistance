@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, use_key_in_widget_constructors, no_leading_underscores_for_local_identifiers, no_logic_in_create_state
 
 import 'package:flutter/material.dart';
 
@@ -217,7 +217,7 @@ class MyDialog extends StatefulWidget{
   
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+    
     throw UnimplementedError();
   }
 }
