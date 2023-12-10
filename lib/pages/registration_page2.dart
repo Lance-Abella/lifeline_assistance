@@ -12,7 +12,7 @@ class RegistrationPage2 extends StatefulWidget {
   final TextEditingController lastnameController;
   final TextEditingController emailController;
   final String? gender;
-  final DateTime selectedDate;
+  final Timestamp selectedDate;
   final TextEditingController numberController;
   final TextEditingController passwordController;
   final TextEditingController addressController;
@@ -50,7 +50,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
   late TextEditingController firstnameController;
   late TextEditingController lastnameController;
   late String? gender;
-  late DateTime selectedDate;
+  late Timestamp selectedDate;
   late TextEditingController numberController;
   late TextEditingController addressController;
   late TextEditingController occupationController;
@@ -98,7 +98,9 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
       password: passwordController.text.trim(),
   );
 
-  String formattedDate = selectedDate.toLocal().toString();
+  // String birthofdate= selectedDate.toDate().toString();
+  // DateTime parsedDate = DateTime.parse(formattedDate);
+  // Timestamp birthofdate = Timestamp.fromDate(parsedDate);
 
     addUserDetails(
       //User details
@@ -106,12 +108,12 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
       lastnameController.text.trim(), 
       emailController.text.trim(), 
       gender!, 
-      formattedDate, 
+      selectedDate,
       int.parse(numberController.text.trim()), 
       passwordController.text.trim(), 
       addressController.text.trim(), 
       occupationController.text.trim(), 
-      selectedBloodType as String,
+      selectedBloodType ?? "",
       
       //User's trusted person
       _firstnameController.text.trim(),
@@ -123,7 +125,22 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
 
 }
 
-  Future addUserDetails(String firstname, String lastname, String email, String gender, String dateofbirth, int number, String password, String address, String occupation, String bloodtype, String trustedfn, String trustedmn, String trustedln, int trustednum, String trustedrel) async{
+  Future addUserDetails(
+    String firstname, 
+    String lastname, 
+    String email, 
+    String gender, 
+    Timestamp dateofbirth, 
+    int number, 
+    String password, 
+    String address, 
+    String occupation, 
+    String? bloodtype, 
+    String trustedfn, 
+    String trustedmn, 
+    String trustedln, 
+    int trustednum, 
+    String trustedrel) async{
   await FirebaseFirestore.instance.collection("users").add({
     //User details
     "firstname": firstname,
@@ -135,7 +152,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
     "password": password,
     "address": address,
     "occupation": occupation,
-    "bloodtype": bloodtype,
+    "bloodtype": bloodtype ?? "",
 
     //User's trusted details
     "trustedfn": trustedfn,

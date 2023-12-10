@@ -1,5 +1,7 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports, avoid_print
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/Objects/dialog.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
@@ -8,9 +10,77 @@ import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  String firstname = "";
+  String lastname = "";
+  // String dateofbirth = "";
+  Timestamp? dateofbirth;
+  String gender = "";
+  int number = 0;
+  String occupation = "";
+  String address = "";
+  String bloodtype = "";
+
+   @override
+  void initState() {
+    super.initState();
+    // Fetch user data when the widget is first created
+    fetchUserData();
+  }
+
+  Future<void> fetchUserData() async {
+    // Get the current user from Firebase Authentication
+    User? user = FirebaseAuth.instance.currentUser;
+    // print("User Email: ${user?.email}");  
+
+    if (user != null) {
+      // User is signed in
+      String email = user.email ?? "";
+
+      // Replace 'your_collection_name' with the actual collection name
+      String collectionName = "users";
+
+      try {
+        // Timestamp dateOfBirthTimestamp = Timestamp.fromDate(selectedDate);
+        // Fetch user data from Firestore based on user's email
+        QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+            .collection(collectionName)
+            .where('email', isEqualTo: email)
+            .get();
+
+        // Check if there are any matching documents
+        if (querySnapshot.docs.isNotEmpty) {
+          // Use the data from the first matching document
+          DocumentSnapshot userSnapshot = querySnapshot.docs[0];
+
+          // Update state variables with fetched data
+          setState(() {
+            firstname = userSnapshot['firstname'] ?? "";
+            lastname = userSnapshot['lastname'] ?? "";  
+            dateofbirth = userSnapshot['dateofbirth'] ?? "";
+            gender = userSnapshot['gender'] ?? "";
+            number = userSnapshot['number'] ?? 0;
+            occupation = userSnapshot['occupation'] ?? "";
+            address = userSnapshot['address'] ?? "";
+            bloodtype = userSnapshot['bloodtype'] ?? "";
+          });
+        }
+      } catch (error) {
+        print("Error fetching user data: $error");
+      }
+    } else {
+      // No user is signed in
+      print("No user is signed in");
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,13 +144,14 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 100, top: 350),
                   child: Text(
-                    "Lance Mathew Abella",
+                    "$firstname $lastname",                    
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
+                     
                   ),
               ),
       
@@ -100,7 +171,9 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 400),
                   child: Text(
-                    "February 27, 2002",
+                     dateofbirth != null
+        ? DateTime.fromMillisecondsSinceEpoch(dateofbirth!.seconds * 1000).toString().split(' ')[0]
+        : "",
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -126,7 +199,7 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 430),
                   child: Text(
-                    "Male",
+                    gender,
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -152,7 +225,7 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 460),
                   child: Text(
-                    "09945641269",
+                  number.toString(),
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -178,7 +251,7 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 490),
                   child: Text(
-                    "Student",
+                    occupation,
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -204,7 +277,7 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 520),
                   child: Text(
-                    "Dumlog, Talisay City",
+                    address,
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -230,7 +303,7 @@ class ProfilePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 170, top: 570),
                   child: Text(
-                    "B+",
+                    bloodtype,
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",

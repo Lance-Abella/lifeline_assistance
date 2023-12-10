@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unused_element, deprecated_member_use, prefer_relative_imports
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lifeline_assistance/pages/login_email.dart';
@@ -17,7 +18,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   final lastnameController = TextEditingController();
   final emailController = TextEditingController();
   String? gender;
-  DateTime selectedDate = DateTime.now();
+  Timestamp selectedDate = Timestamp.now();
   final numberController = TextEditingController();
   final passwordController = TextEditingController();
   final addressController = TextEditingController();
@@ -38,11 +39,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
   }
 
   Future<void> _selectDate(BuildContext context) async {
-  DateTime currentDate = selectedDate;
+  DateTime selectedDateTime = DateTime.fromMillisecondsSinceEpoch(selectedDate.seconds * 1000);
 
   DateTime? picked = await showDialog(
     context: context,
     builder: (BuildContext context) {
+      DateTime currentDate = selectedDateTime;
+
       return AlertDialog(
         title: Text(
           "Select Date of Birth",
@@ -90,7 +93,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   if (picked != null) {
     setState(() {
-      selectedDate = picked;
+      selectedDate = Timestamp.fromDate(picked);
     });
   }
 }
@@ -337,7 +340,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),  
                 ),
                   child: Text(
-                    "${selectedDate.toLocal()}".split(' ')[0],
+                    DateTime.fromMillisecondsSinceEpoch(selectedDate.seconds * 1000).toString().split(' ')[0],
                     style: TextStyle(
                       fontSize: 16,
                     ),
