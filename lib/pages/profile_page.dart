@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/Objects/dialog.dart';
+import 'package:lifeline_assistance/Objects/userdata.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
 import 'package:lifeline_assistance/pages/call_page.dart';
 import 'package:lifeline_assistance/pages/home_page.dart';
@@ -28,11 +29,68 @@ class _ProfilePageState extends State<ProfilePage> {
   String address = "";
   String bloodtype = "";
 
+   late UserProfile userProfile;
+
    @override
   void initState() {
     super.initState();
+    userProfile = UserProfile(firstname: "Initial", lastname: "User");
     // Fetch user data when the widget is first created
     fetchUserData();
+  }
+
+  void updateUserProfile(String newFirstName, String newLastName) {
+    setState(() {
+      userProfile = UserProfile(
+        firstname: newFirstName,
+        lastname: newLastName,
+        // Update other fields if needed
+      );
+    });
+
+    fetchUserData();
+  }
+
+  Future<void> updateUserDetails(String newFirstName, String newLastName) async {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      String email = user.email ?? "";
+      String collectionName = "users";
+
+      try {
+        // Fetch user data from Firestore based on user's email
+        QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+            .collection(collectionName)
+            .where('email', isEqualTo: email)
+            .get();
+
+        if (querySnapshot.docs.isNotEmpty) {
+          // Use the data from the first matching document
+          DocumentSnapshot userSnapshot = querySnapshot.docs[0];
+
+          // Update user details in Firestore
+          await userSnapshot.reference.update({
+            'firstname': newFirstName,
+            'lastname': newLastName,
+            // Update other details
+          });
+
+          await fetchUserData();
+
+          // Update the UserProfile instance
+          setState(() {
+            userProfile = UserProfile(
+              firstname: newFirstName,
+              lastname: newLastName,
+              // Update other fields if needed
+            );
+          });
+        }
+      } catch (error) {
+        print("Error updating user data: $error");
+      }
+    }
   }
 
   Future<void> fetchUserData() async {
@@ -64,7 +122,8 @@ class _ProfilePageState extends State<ProfilePage> {
           setState(() {
             firstname = userSnapshot['firstname'] ?? "";
             lastname = userSnapshot['lastname'] ?? "";  
-            dateofbirth = userSnapshot['dateofbirth'] ?? "";
+            // dateofbirth = userSnapshot['dateofbirth'] ?? "";
+            dateofbirth = userSnapshot['dateofbirth'] as Timestamp?;
             gender = userSnapshot['gender'] ?? "";
             number = userSnapshot['number'] ?? 0;
             occupation = userSnapshot['occupation'] ?? "";
@@ -468,7 +527,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
 
                 GestureDetector(
-                  onTap: () => MyDialog.showPostDialog(context), 
+                  onTap: () => MyDialog.showPostDialog(context, updateUserDetails),
                   child: Container(
                     height: 60,
                     width: 60,

@@ -1,16 +1,15 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, use_key_in_widget_constructors, no_leading_underscores_for_local_identifiers, no_logic_in_create_state
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
-class MyDialog extends StatefulWidget{
-  static get gender => null;
+class MyDialog extends StatefulWidget {
+  final Function(String, String) onUpdate;
 
-  static Future<void> showPostDialog(BuildContext context) async {
-    String userInput = '';
-    String? gender;
-    DateTime selectedDate = DateTime.now();
-    bool _obscureText = true;
-    String? selectedBloodType;
+  MyDialog({required this.onUpdate});
+
+  static Future<void> showPostDialog(BuildContext context, Function(String, String) onUpdateCallback) async {
+    TextEditingController _firstnameController = TextEditingController();
+    TextEditingController _lastnameController = TextEditingController();
 
     await showDialog(
       context: context,
@@ -19,20 +18,14 @@ class MyDialog extends StatefulWidget{
           backgroundColor: Colors.white,
           title: Text(
             'Edit profile',
-            style:TextStyle(
+            style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w900,
             ),
           ),
-          // content: TextField(
-          //   onChanged: (text) {
-          //     userInput = text;
-          //   },
-          // ),
           content: ListView(
             children: [
               Container(
-                // margin: EdgeInsets.only(left: 40, top: 310),
                 child: Text(
                   "First Name:",
                   style: TextStyle(
@@ -43,15 +36,14 @@ class MyDialog extends StatefulWidget{
                   ),
                 ),
               ),
-        
               Container(
                 height: 41,
                 width: 280,
-                // margin: EdgeInsets.only(left: 40, top: 340),
                 child: TextField(
+                  controller: _firstnameController,
                   style: TextStyle(
                     color: Colors.black,
-                  ),                
+                  ),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -64,9 +56,7 @@ class MyDialog extends StatefulWidget{
                   ),
                 ),
               ),
-
               Container(
-                // margin: EdgeInsets.only(left: 40, top: 490),
                 child: Text(
                   "Last Name:",
                   style: TextStyle(
@@ -77,15 +67,14 @@ class MyDialog extends StatefulWidget{
                   ),
                 ),
               ),
-
               Container(
                 height: 41,
                 width: 280,
-                // margin: EdgeInsets.only(left: 40, top: 520),
                 child: TextField(
+                  controller: _lastnameController,
                   style: TextStyle(
                     color: Colors.black,
-                  ),                 
+                  ),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
@@ -98,85 +87,16 @@ class MyDialog extends StatefulWidget{
                   ),
                 ),
               ),
-
-              Container(
-                margin: EdgeInsets.only(left: 40, top: 580),
-                child: Text(
-                  "Gender:",
-                  style: TextStyle(
-                    color: Color.fromRGBO(88, 83, 83, 1),
-                    fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.only(left: 30, top: 600),
-                child: RadioListTile(
-                  selected: false,
-                  fillColor: MaterialStateProperty.all(const Color.fromRGBO(0, 0, 0, 0.6)),
-                  title: Text(
-                    "Male",
-                    style: TextStyle(
-                      color: const Color.fromRGBO(88, 83, 83, 1),
-                      fontSize: 16,
-                      fontFamily: "IBM Plex Mono",
-                      fontWeight: FontWeight.w400,
-                      ),
-                      ),
-                  value: "Male",
-                  groupValue: gender,
-                  activeColor: Colors.black,
-                  onChanged: (value) {
-                    setState(() {
-                      gender = value!;
-                    });
-                  },
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.only(left: 30, top: 630),
-                child: RadioListTile(
-                  selected: false,
-                  fillColor: MaterialStateProperty.all(const Color.fromRGBO(0, 0, 0, 0.6)),
-                  title: Text(
-                    "Female",
-                    style: TextStyle(
-                      color: const Color.fromRGBO(88, 83, 83, 1),
-                      fontSize: 16,
-                      fontFamily: "IBM Plex Mono",
-                      fontWeight: FontWeight.w400,
-                      ),
-                      ),
-                  value: "Female",
-                  groupValue: gender,
-                  activeColor: Colors.black,
-                  onChanged: (value) {
-                    setState(() {
-                      gender = value!;
-                    });
-                  },
-                ),
-              ),
-
-
-            ]),
-
-
-
-
-
-
+            ],
+          ),
           actions: <Widget>[
             Container(
               height: 45,
               width: 84,
               decoration: BoxDecoration(
-                  color: const Color.fromRGBO(88, 83, 83, 1),
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
+                color: const Color.fromRGBO(88, 83, 83, 1),
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
               padding: EdgeInsets.all(5),
               child: TextButton(
                 child: Text(
@@ -186,6 +106,10 @@ class MyDialog extends StatefulWidget{
                   ),
                 ),
                 onPressed: () {
+                  String newFirstName = _firstnameController.text;
+                  String newLastName = _lastnameController.text;
+                  // Use widget.onUpdate to access the method from the parent widget
+                  onUpdateCallback(newFirstName, newLastName);                
                   Navigator.of(context).pop();
                 },
               ),
@@ -194,8 +118,9 @@ class MyDialog extends StatefulWidget{
               height: 45,
               width: 84,
               decoration: BoxDecoration(
-                  color: const Color.fromRGBO(88, 83, 83, 1),
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
+                color: const Color.fromRGBO(88, 83, 83, 1),
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
               padding: EdgeInsets.all(5),
               child: TextButton(
                 child: Text(
@@ -212,12 +137,17 @@ class MyDialog extends StatefulWidget{
       },
     );
   }
-  
-  static void setState(Null Function() param0) {}
-  
+
   @override
   State<StatefulWidget> createState() {
-    
+    return _MyDialogState();
+  }
+}
+
+class _MyDialogState extends State<MyDialog> {
+  @override
+  Widget build(BuildContext context) {
+    // Implement build method if needed
     throw UnimplementedError();
   }
 }
