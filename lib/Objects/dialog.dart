@@ -4,12 +4,24 @@ import 'package:flutter/material.dart';
 
 class MyDialog extends StatefulWidget {
   final Function(String, String) onUpdate;
+  final String initialFirstName;
+  final String initialLastName;
 
-  MyDialog({required this.onUpdate});
+  MyDialog({
+    required this.onUpdate, 
+    required this.initialFirstName, 
+    required this.initialLastName
+    });
 
-  static Future<void> showPostDialog(BuildContext context, Function(String, String) onUpdateCallback) async {
-    TextEditingController _firstnameController = TextEditingController();
-    TextEditingController _lastnameController = TextEditingController();
+  static Future<void> showPostDialog(
+    BuildContext context, 
+    Function(String, String) onUpdateCallback, 
+    {
+    required String initialFirstName,
+    required String initialLastName,
+    }) async {
+    TextEditingController _firstnameController = TextEditingController(text: initialFirstName);
+    TextEditingController _lastnameController = TextEditingController(text: initialLastName);
 
     await showDialog(
       context: context,
@@ -25,6 +37,7 @@ class MyDialog extends StatefulWidget {
           ),
           content: ListView(
             children: [
+
               Container(
                 child: Text(
                   "First Name:",
@@ -36,6 +49,7 @@ class MyDialog extends StatefulWidget {
                   ),
                 ),
               ),
+
               Container(
                 height: 41,
                 width: 280,
@@ -56,6 +70,7 @@ class MyDialog extends StatefulWidget {
                   ),
                 ),
               ),
+
               Container(
                 child: Text(
                   "Last Name:",
@@ -67,6 +82,7 @@ class MyDialog extends StatefulWidget {
                   ),
                 ),
               ),
+
               Container(
                 height: 41,
                 width: 280,
@@ -89,6 +105,7 @@ class MyDialog extends StatefulWidget {
               ),
             ],
           ),
+
           actions: <Widget>[
             Container(
               height: 45,

@@ -231,8 +231,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   margin: EdgeInsets.only(left: 170, top: 400),
                   child: Text(
                      dateofbirth != null
-        ? DateTime.fromMillisecondsSinceEpoch(dateofbirth!.seconds * 1000).toString().split(' ')[0]
-        : "",
+                      ? DateTime.fromMillisecondsSinceEpoch(dateofbirth!.seconds * 1000).toString().split(' ')[0]
+                      : "",
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -527,7 +527,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
 
                 GestureDetector(
-                  onTap: () => MyDialog.showPostDialog(context, updateUserDetails),
+                  onTap: () => MyDialog.showPostDialog(
+                    context, 
+                    updateUserDetails,
+                    initialFirstName: firstname,
+                    initialLastName: lastname), 
                   child: Container(
                     height: 60,
                     width: 60,
