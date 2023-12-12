@@ -290,7 +290,10 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
       
               GestureDetector(
-                onTap: () => removeAccount(),
+                onTap: () {
+                  removeAccount();
+                  // Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPageEmail()));
+                  },
                 child: Container(
                   height: 35,
                   width: 35,
@@ -303,7 +306,10 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
       
               GestureDetector(
-                onTap: () => removeAccount(),
+                onTap: () {
+                  removeAccount();
+                  // Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginPageEmail()));
+                  },
                 child: Container(
                     margin: EdgeInsets.only(left: 70, top: 585),
                     child: Text(

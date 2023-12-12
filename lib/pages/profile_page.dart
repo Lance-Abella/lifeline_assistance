@@ -32,18 +32,38 @@ class _ProfilePageState extends State<ProfilePage> {
    late UserProfile userProfile;
 
    @override
-  void initState() {
+  void initState(){
+
     super.initState();
-    userProfile = UserProfile(firstname: "Initial", lastname: "User");
+    userProfile = UserProfile(
+      firstname: "", 
+      lastname: "", 
+      number: 0, 
+      occupation: '', 
+      address: '',  );
+
     // Fetch user data when the widget is first created
     fetchUserData();
   }
 
-  void updateUserProfile(String newFirstName, String newLastName) {
+  void updateUserProfile(
+
+    String newFirstName, 
+    String newLastName, 
+    Timestamp newDateOfBirth, 
+    String newGender, 
+    int newNumber, 
+    String newOccupation, 
+    String newAddress, 
+    String newBloodtype
+    ) {
     setState(() {
       userProfile = UserProfile(
         firstname: newFirstName,
-        lastname: newLastName,
+        lastname: newLastName, 
+        number: newNumber, 
+        occupation: newOccupation, 
+        address: newAddress, 
         // Update other fields if needed
       );
     });
@@ -51,7 +71,13 @@ class _ProfilePageState extends State<ProfilePage> {
     fetchUserData();
   }
 
-  Future<void> updateUserDetails(String newFirstName, String newLastName) async {
+  Future<void> updateUserDetails(
+    String newFirstName, 
+    String newLastName,
+    int newNumber,
+    String newOccupation,
+    String newAddress, )async {
+
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
@@ -73,6 +99,9 @@ class _ProfilePageState extends State<ProfilePage> {
           await userSnapshot.reference.update({
             'firstname': newFirstName,
             'lastname': newLastName,
+            'number': newNumber,
+            'occupation': newOccupation,
+            'address': newAddress, 
             // Update other details
           });
 
@@ -83,6 +112,9 @@ class _ProfilePageState extends State<ProfilePage> {
             userProfile = UserProfile(
               firstname: newFirstName,
               lastname: newLastName,
+              number: newNumber,
+              occupation: newOccupation,
+              address: newAddress,
               // Update other fields if needed
             );
           });
@@ -188,34 +220,38 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
       
-              Container(
-                height: 120,
-                width: 110,
-                margin: EdgeInsets.only(left: 128, top: 220),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/pp.png"),
-                    fit: BoxFit.cover,
+              Center(
+                child: Container(
+                  height: 120,
+                  width: 110,
+                  margin: EdgeInsets.only(bottom: 200),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/pp.png"),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
       
-              Container(
-                  margin: EdgeInsets.only(left: 100, top: 350),
-                  child: Text(
-                    "$firstname $lastname",                    
-                    style: TextStyle(
-                      color: Color.fromRGBO(88, 83, 83, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
+              Center(
+                child: Container(
+                    margin: EdgeInsets.only(bottom: 40),
+                    child: Text(
+                      "$firstname $lastname",                    
+                      style: TextStyle(
+                        color: Color.fromRGBO(88, 83, 83, 1),
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                       
                     ),
-                     
-                  ),
+                ),
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 400),
+                margin: EdgeInsets.only(left: 30, top: 400),
                 child: Text(
                   "Date of Birth:",
                   style: TextStyle(
@@ -228,7 +264,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 400),
+                  margin: EdgeInsets.only(left: 180, top: 400),
                   child: Text(
                      dateofbirth != null
                       ? DateTime.fromMillisecondsSinceEpoch(dateofbirth!.seconds * 1000).toString().split(' ')[0]
@@ -243,7 +279,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 430),
+                margin: EdgeInsets.only(left: 30, top: 430),
                 child: Text(
                   "Sex:",
                   style: TextStyle(
@@ -256,7 +292,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 430),
+                  margin: EdgeInsets.only(left: 180, top: 430),
                   child: Text(
                     gender,
                     style: TextStyle(
@@ -269,7 +305,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 460),
+                margin: EdgeInsets.only(left: 30, top: 460),
                 child: Text(
                   "Contact No.:",
                   style: TextStyle(
@@ -282,7 +318,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 460),
+                  margin: EdgeInsets.only(left: 180, top: 460),
                   child: Text(
                   number.toString(),
                     style: TextStyle(
@@ -295,7 +331,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 490),
+                margin: EdgeInsets.only(left: 30, top: 490),
                 child: Text(
                   "Occupation:",
                   style: TextStyle(
@@ -308,7 +344,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 490),
+                  margin: EdgeInsets.only(left: 180, top: 490),
                   child: Text(
                     occupation,
                     style: TextStyle(
@@ -321,7 +357,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 520),
+                margin: EdgeInsets.only(left: 30, top: 520),
                 child: Text(
                   "Address:",
                   style: TextStyle(
@@ -334,7 +370,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 520),
+                  margin: EdgeInsets.only(left: 180, top: 520),
                   child: Text(
                     address,
                     style: TextStyle(
@@ -347,7 +383,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                margin: EdgeInsets.only(left: 20, top: 570),
+                margin: EdgeInsets.only(left: 30, top: 570),
                 child: Text(
                   "Blood Type:",
                   style: TextStyle(
@@ -360,7 +396,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
       
               Container(
-                  margin: EdgeInsets.only(left: 170, top: 570),
+                  margin: EdgeInsets.only(left: 180, top: 570),
                   child: Text(
                     bloodtype,
                     style: TextStyle(
@@ -531,7 +567,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     context, 
                     updateUserDetails,
                     initialFirstName: firstname,
-                    initialLastName: lastname), 
+                    initialLastName: lastname, 
+                    initialNumber: number, 
+                    initialOccupation: occupation, 
+                    initialAddress: address, ), 
                   child: Container(
                     height: 60,
                     width: 60,
