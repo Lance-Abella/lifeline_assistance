@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports, avoid_print
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lifeline_assistance/pages/bulletin_page.dart';
@@ -10,8 +11,44 @@ import 'package:lifeline_assistance/pages/login_email.dart';
 import 'package:lifeline_assistance/pages/notification_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
+
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+
+  Future<void> removeAccount() async {
+  try {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      String email = user.email ?? "";
+      String collectionName = "users";
+
+      // Remove user from Firestore
+      await FirebaseFirestore.instance
+          .collection(collectionName)
+          .where('email', isEqualTo: email)
+          .get()
+          .then((querySnapshot) {
+        if (querySnapshot.docs.isNotEmpty) {
+          querySnapshot.docs.first.reference.delete();
+        }
+      });
+
+      // Remove user from Firebase Authentication
+      await user.delete();
+
+      // Sign out the user
+      await FirebaseAuth.instance.signOut();
+    }
+  } catch (error) {
+    print("Error removing account: $error");
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +223,7 @@ class SettingsPage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(left: 70, top: 455),
                   child: Text(
-                    "Help & Support",
+                    "About - Help & Support",
                     style: TextStyle(
                       color: Color.fromRGBO(88, 83, 83, 1),
                       fontFamily: "IBM Plex Mono",
@@ -251,28 +288,34 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
       
-              Container(
-                height: 32,
-                width: 32,
-                margin: EdgeInsets.only(left: 30, top: 580),
-                child: Image(
-                  image: AssetImage("assets/info.png"),
-                  fit: BoxFit.fill,
+              GestureDetector(
+                onTap: () => removeAccount(),
+                child: Container(
+                  height: 35,
+                  width: 35,
+                  margin: EdgeInsets.only(left: 30, top: 580),
+                  child: Image(
+                    image: AssetImage("assets/cancel.png"),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
       
-              Container(
-                  margin: EdgeInsets.only(left: 70, top: 585),
-                  child: Text(
-                    "About",
-                    style: TextStyle(
-                      color: Color.fromRGBO(88, 83, 83, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: () => removeAccount(),
+                child: Container(
+                    margin: EdgeInsets.only(left: 70, top: 585),
+                    child: Text(
+                      "Delete Account",
+                      style: TextStyle(
+                        color: Color.fromRGBO(88, 83, 83, 1),
+                        fontFamily: "IBM Plex Mono",
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                ),
+              ),
       
               Container(
                 height: 20,
