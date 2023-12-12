@@ -535,21 +535,21 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                   style: TextStyle(
                     color: Color.fromRGBO(88, 83, 83, 1),
                     fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 124, top: 878),
+                margin: EdgeInsets.only(left: 124, top: 880),
                 width: 180,
                 child: Text(
                   "Terms and Conditions",
                   style: TextStyle(
                     color: Color.fromRGBO(191, 27, 27, 1),
                     fontFamily: "IBM Plex Mono",
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

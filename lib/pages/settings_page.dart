@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports, avoid_print
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_relative_imports, avoid_print, use_build_context_synchronously
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -44,6 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
       // Sign out the user
       await FirebaseAuth.instance.signOut();
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPageEmail()));
     }
   } catch (error) {
     print("Error removing account: $error");

@@ -16,48 +16,68 @@ class _LoginPageState extends State<LoginPageEmail> {
   final passwordController = TextEditingController();
   bool _obscureText = true;
 
-Future<void> signIn() async {
+Future <void> signIn() async {
   try {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text.trim(), 
-      password: passwordController.text.trim(),
-      
-    );
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CallPage()));
-  } catch (e) {
+    // Check if email and password are not null or empty
+    String email = emailController.text.trim();
+    String password = passwordController.text.trim();
 
-    String errorMessage = 'Authentication failed';
-
-    if (e is FirebaseAuthException) {
-      switch (e.code) {
-        case 'user-not-found':
-          errorMessage = 'No user found with this email.';
-          break;
-        case 'wrong-password':
-          errorMessage = 'Invalid password.';
-          break;
-      }
+    if (email.isEmpty || password.isEmpty) {
+      // Display an error message or handle the situation accordingly
+      print("Email and password cannot be empty.");
+      return;
     }
+    // else{
+      // Attempt to sign in
+     await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Center(
-          child: Text(
-            errorMessage, 
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight:FontWeight.w600,
-            ),)),
-        duration: Duration(seconds: 3),
-        behavior: SnackBarBehavior.floating,
+    // Navigate to the desired page after successful sign-in
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CallPage()));
+    // }
 
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+  } on FirebaseAuthException catch (e) {
+ 
+
+  String errorMessage = 'Login failed';
+// throw Exception(e);
+  switch (e.code) {
+    case 'user-not-found':
+      errorMessage = 'No user found with this email.';
+      break;
+    case 'wrong-password':
+      errorMessage = 'Invalid password.';
+      break;
+    default:
+      errorMessage = 'Login failed please try again!';
+  }
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Center(
+        child: Text(
+          errorMessage,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
-    );
+      duration: Duration(seconds: 3),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ),
+  );
+  
+  } catch(e){
+    print("An unexpected error occurred: $e");
   }
 }
+
 
 
   @override
