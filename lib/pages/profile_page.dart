@@ -126,35 +126,24 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Future<void> fetchUserData() async {
-    // Get the current user from Firebase Authentication
     User? user = FirebaseAuth.instance.currentUser;
-    // print("User Email: ${user?.email}");  
 
     if (user != null) {
-      // User is signed in
       String email = user.email ?? "";
-
-      // Replace 'your_collection_name' with the actual collection name
       String collectionName = "users";
 
       try {
-        // Timestamp dateOfBirthTimestamp = Timestamp.fromDate(selectedDate);
-        // Fetch user data from Firestore based on user's email
         QuerySnapshot querySnapshot = await FirebaseFirestore.instance
             .collection(collectionName)
             .where('email', isEqualTo: email)
             .get();
 
-        // Check if there are any matching documents
         if (querySnapshot.docs.isNotEmpty) {
-          // Use the data from the first matching document
           DocumentSnapshot userSnapshot = querySnapshot.docs[0];
 
-          // Update state variables with fetched data
           setState(() {
             firstname = userSnapshot['firstname'] ?? "";
             lastname = userSnapshot['lastname'] ?? "";  
-            // dateofbirth = userSnapshot['dateofbirth'] ?? "";
             dateofbirth = userSnapshot['dateofbirth'] as Timestamp?;
             gender = userSnapshot['gender'] ?? "";
             number = userSnapshot['number'] ?? 0;
@@ -167,7 +156,6 @@ class _ProfilePageState extends State<ProfilePage> {
         print("Error fetching user data: $error");
       }
     } else {
-      // No user is signed in
       print("No user is signed in");
     }
   }
@@ -447,23 +435,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Homepage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 24, top: 730),
-              //       child: Text(
-              //         "home",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+              ),                    
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
@@ -476,23 +448,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 84, top: 730),
-              //       child: Text(
-              //         "forum",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+              ),                    
       
               GestureDetector(
                 onTap: () async => await Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -521,23 +477,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 247, top: 730),
-              //       child: Text(
-              //         "settings",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+              ),                   
       
               Container(
                 height: 43,
@@ -585,12 +525,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ),
-
-                
-      
-      
-      
-      
+                                        
             ],
           ),
         ),

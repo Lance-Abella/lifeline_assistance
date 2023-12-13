@@ -109,9 +109,7 @@ class LightIndicator extends StatelessWidget {
               child: Image(
                 image: AssetImage("assets/19%.png"),
               ),
-            ),
-
-            
+            ),            
 
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),

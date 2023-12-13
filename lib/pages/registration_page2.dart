@@ -98,10 +98,6 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
       password: passwordController.text.trim(),
   );
 
-  // String birthofdate= selectedDate.toDate().toString();
-  // DateTime parsedDate = DateTime.parse(formattedDate);
-  // Timestamp birthofdate = Timestamp.fromDate(parsedDate);
-
     addUserDetails(
       //User details
       firstnameController.text.trim(), 

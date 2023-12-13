@@ -236,17 +236,20 @@ class MyDialog extends StatefulWidget {
           actions: <Widget>[
             Container(
               height: 45,
-              width: 84,
+              width: 110,
               decoration: BoxDecoration(
-                color: const Color.fromRGBO(88, 83, 83, 1),
+                // color: const Color.fromRGBO(88, 83, 83, 1),
+                color: Color.fromRGBO(191, 27, 27, 1),
                 borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.all(2),
               child: TextButton(
-                child: Text(
-                  'Send',
-                  style: TextStyle(
-                    color: Colors.white,
+                child: Center(
+                  child: Text(
+                    'Save changes',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 onPressed: () {
@@ -271,7 +274,8 @@ class MyDialog extends StatefulWidget {
               height: 45,
               width: 84,
               decoration: BoxDecoration(
-                color: const Color.fromRGBO(88, 83, 83, 1),
+                // color: const Color.fromRGBO(88, 83, 83, 1),
+                color: Color.fromRGBO(191, 27, 27, 1),
                 borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
               padding: EdgeInsets.all(5),

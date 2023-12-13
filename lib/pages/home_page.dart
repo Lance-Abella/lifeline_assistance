@@ -194,52 +194,7 @@ class _HomepageState extends State<Homepage> {
                     image: AssetImage("assets/notif.png"),
                   ),
                 ),
-              ),
-
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
-              //   child: Container(                      
-              //     width: 50,             
-              //     margin: EdgeInsets.only(left: 302, top: 130),                  
-              //     child: Text(
-              //       "Notif",
-              //       style: TextStyle(
-              //         color: Color.fromRGBO(191, 27, 27, 1),
-              //         fontFamily: "IBM Plex Mono",
-              //         fontSize: 14,
-              //         fontWeight: FontWeight.w600,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
-              //   child: Container(
-              //     height: 50,
-              //     width: 50,
-              //     margin: EdgeInsets.only(left: 22, top: 90),
-              //     child: Image(
-              //       image: AssetImage("assets/rotate.png"),              
-              //     ),
-              //   ),
-              // ),
-
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
-              //   child: Container(              
-              //       margin: EdgeInsets.only(left: 25, top: 130),
-              //       child: Text(
-              //         "Refresh",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(191, 27, 27, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 14,
-              //           fontWeight: FontWeight.w600,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+              ),              
       
               Container(
                 height: 20,
@@ -303,23 +258,7 @@ class _HomepageState extends State<Homepage> {
                     fit: BoxFit.cover,
                   ),
                   ),
-                ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 84, top: 730),
-              //       child: Text(
-              //         "forum",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+                ),                    
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
@@ -348,23 +287,7 @@ class _HomepageState extends State<Homepage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 247, top: 730),
-              //       child: Text(
-              //         "settings",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),
+              ),                    
       
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
@@ -377,23 +300,7 @@ class _HomepageState extends State<Homepage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              // GestureDetector(
-              //   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
-              //   child: Container(
-              //       margin: EdgeInsets.only(left: 310, top: 730),
-              //       child: Text(
-              //         "profile",
-              //         style: TextStyle(
-              //           color: Color.fromRGBO(216, 216, 216, 1),
-              //           fontFamily: "IBM Plex Mono",
-              //           fontSize: 11,
-              //           fontWeight: FontWeight.w700,
-              //         ),
-              //       ),
-              //     ),
-              // ),                    
+              ),                           
             ],
           ),
         ),

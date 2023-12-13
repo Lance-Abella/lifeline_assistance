@@ -297,7 +297,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: Container(
                   height: 35,
                   width: 35,
-                  margin: EdgeInsets.only(left: 30, top: 580),
+                  margin: EdgeInsets.only(left: 29, top: 578),
                   child: Image(
                     image: AssetImage("assets/cancel.png"),
                     fit: BoxFit.fill,

@@ -7,7 +7,6 @@ import 'package:lifeline_assistance/pages/home_page.dart';
 import 'package:lifeline_assistance/pages/light_indicator_page.dart';
 import 'package:lifeline_assistance/pages/profile_page.dart';
 import 'package:lifeline_assistance/pages/settings_page.dart';
-
 import '../Objects/notifs.dart';
 
 class Notif extends StatelessWidget {
@@ -66,23 +65,7 @@ class Notif extends StatelessWidget {
                   ),
                 ),
               ),
-
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage())),
-                child: Container(              
-                    margin: EdgeInsets.only(left: 31, top: 135),
-                    child: Text(
-                      "Back",
-                      style: TextStyle(
-                        color: Color.fromRGBO(191, 27, 27, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-              ),
-
+              
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
                 child: Container(
@@ -93,24 +76,7 @@ class Notif extends StatelessWidget {
                     image: AssetImage("assets/notif.png"),
                   ),
                 ),
-              ),
-
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Notif())),
-                child: Container(                      
-                  width: 50,             
-                  margin: EdgeInsets.only(left: 305, top: 130),                  
-                  child: Text(
-                    "Notif",
-                    style: TextStyle(
-                      color: Color.fromRGBO(191, 27, 27, 1),
-                      fontFamily: "IBM Plex Mono",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
+              ),              
 
               Container(
                 height: 20,
@@ -159,311 +125,7 @@ class Notif extends StatelessWidget {
                       );
 
                 }),
-              ), 
-
-
-
-
-
-              // Container(
-              //   padding: EdgeInsets.only(top: 10, bottom: 10),
-              //   margin: EdgeInsets.only(top: 190),
-              //   height: 490,
-              //   child: SingleChildScrollView(
-              //     physics: BouncingScrollPhysics(),
-              //     child: Stack(
-              //       children: [
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 5),                       
-              //         child: Image(
-              //           image: AssetImage("assets/like.png"),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 5),
-              //         child: Text(
-              //           "Your ticket has been approved!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 25),
-              //         child: Text(
-              //           "Develop and share disaster preparedness plans and resources...",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 60),
-              //         child: Text(
-              //           "24 mins ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 90),                       
-              //         child: Image(
-              //           image: AssetImage("assets/megaphone.png"),
-              //         ),
-              //       ),
-                    
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 90),
-              //         child: Text(
-              //           "Government official has a new post!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 110),
-              //         child: Text(
-              //           "Emergency preparedness: Have a Plan, Stay Informed.",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 145),
-              //         child: Text(
-              //           "1 hr ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 175),                       
-              //         child: Image(
-              //           image: AssetImage("assets/megaphone.png"),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 175),
-              //         child: Text(
-              //           "Government official has a new post!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 195),
-              //         child: Text(
-              //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 230),
-              //         child: Text(
-              //           "2 hr ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 260),                       
-              //         child: Image(
-              //           image: AssetImage("assets/megaphone.png"),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 260),
-              //         child: Text(
-              //           "Government official has a new post!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 280),
-              //         child: Text(
-              //           "Quis auctor elit sed vulputate mi sit amet. Eget lorem dolor sed viverra...",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 315),
-              //         child: Text(
-              //           "2 hr ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-              
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 345),                       
-              //         child: Image(
-              //           image: AssetImage("assets/like.png"),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 345),
-              //         child: Text(
-              //           "Your ticket has been approved!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 365),
-              //         child: Text(
-              //           "Venenatis lectus magna fringilla urna porttitor. Semper auctor neque...",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 400),
-              //         child: Text(
-              //           "3 hrs ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-              
-              //       Container(
-              //         height: 55,
-              //         width: 55, 
-              //         margin: EdgeInsets.only(left: 20, top: 430),                       
-              //         child: Image(
-              //           image: AssetImage("assets/warning.png"),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 430),
-              //         child: Text(
-              //           "New Weekly tip has been posted!",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left: 90, top: 450),
-              //         child: Text(
-              //           "Click to view the post.",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 1),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 14,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-                  
-              //       Container(                  
-              //         margin: EdgeInsets.only(left:90, top: 468),
-              //         child: Text(
-              //           "1d ago",
-              //           style: TextStyle(
-              //             color: Color.fromRGBO(88, 83, 83, 0.58),
-              //             fontFamily: "IBM Plex Mono",
-              //             fontSize: 11,
-              //             fontWeight: FontWeight.w400,
-              //           ),
-              //         ),
-              //       ),
-              //       ]
-              //     ),
-              //   ),
-              // ),
+              ),              
 
               Container(
                 height: 20,
@@ -528,23 +190,7 @@ class Notif extends StatelessWidget {
                   ),
                             ),
                 ),
-      
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>BulletinPage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 84, top: 730),
-                    child: Text(
-                      "forum",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
-      
+                
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>CallPage())),
                 onLongPress: () {                  
@@ -573,23 +219,7 @@ class Notif extends StatelessWidget {
                   ),
                 ),
               ),
-      
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SettingsPage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 247, top: 730),
-                    child: Text(
-                      "settings",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),
-      
+                   
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
                 child: Container(
@@ -601,24 +231,7 @@ class Notif extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-      
-              GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ProfilePage())),
-                child: Container(
-                    margin: EdgeInsets.only(left: 310, top: 730),
-                    child: Text(
-                      "profile",
-                      style: TextStyle(
-                        color: Color.fromRGBO(216, 216, 216, 1),
-                        fontFamily: "IBM Plex Mono",
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-              ),  
-
+              ),                    
               
             ]),
         ),

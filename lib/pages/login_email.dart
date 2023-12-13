@@ -18,68 +18,50 @@ class _LoginPageState extends State<LoginPageEmail> {
 
 Future <void> signIn() async {
   try {
-    // Check if email and password are not null or empty
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
 
-    if (email.isEmpty || password.isEmpty) {
-      // Display an error message or handle the situation accordingly
-      print("Email and password cannot be empty.");
-      return;
-    }
-    // else{
-      // Attempt to sign in
      await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
 
-    // Navigate to the desired page after successful sign-in
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => CallPage()));
-    // }
 
   } on FirebaseAuthException catch (e) {
- 
+      String errorMessage = 'Login failed';
+      switch (e.code) {
+        case 'user-not-found':
+          errorMessage = 'No user found with this email.';
+          break;
+        case 'wrong-password':
+          errorMessage = 'Invalid password.';
+          break;
+        default:
+          errorMessage = 'Login failed please try again!';
+      }
 
-  String errorMessage = 'Login failed';
-// throw Exception(e);
-  switch (e.code) {
-    case 'user-not-found':
-      errorMessage = 'No user found with this email.';
-      break;
-    case 'wrong-password':
-      errorMessage = 'Invalid password.';
-      break;
-    default:
-      errorMessage = 'Login failed please try again!';
-  }
-
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Center(
-        child: Text(
-          errorMessage,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Center(
+            child: Text(
+              errorMessage,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          duration: Duration(seconds: 3),
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
           ),
         ),
-      ),
-      duration: Duration(seconds: 3),
-      behavior: SnackBarBehavior.floating,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    ),
-  );
-  
-  } catch(e){
-    print("An unexpected error occurred: $e");
+      );
+    } 
   }
-}
-
-
-
+  
   @override
   void dispose(){
     emailController.dispose();
